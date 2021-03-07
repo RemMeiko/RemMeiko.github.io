@@ -1,0 +1,1573 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="关于Node.js的简单学习, 技术宅改变世界">
+    <meta name="description" content="技术宅改变世界">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>关于Node.js的简单学习 | RemMeiko</title>
+    <link rel="stylesheet" href="/css/highlight/styles/vs2015.css">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <!-- 一言诗词 -->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"
+charset="utf-8"></script>
+
+<meta name="generator" content="Hexo 5.0.0"></head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">RemMeiko</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">RemMeiko</div>
+        <div class="logo-desc">
+            
+            技术宅改变世界
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('http://acg.toubiec.cn/random.php')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">关于Node.js的简单学习</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Node-js/">
+                                <span class="chip bg-color">Node.js</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
+                            </a>
+                        
+                            <a href="/tags/%E5%B9%BF%E5%BA%A6/">
+                                <span class="chip bg-color">广度</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Node-js/" class="post-category">
+                                Node.js
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-01-27
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-02-02
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    2.9k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    10 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p><strong><font size=6>知识需要足够的广度和一定的深度</font></strong></p>
+<blockquote>
+<p>前言：因为搭建博客接触到node.js，所以对node.js进行简单的了解，扩充一下广度同时记录一些大佬的文章方便自己日后查询，记录如下：</p>
+</blockquote>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="Node-js是什么"><a href="#Node-js是什么" class="headerlink" title="Node.js是什么"></a>Node.js是什么</h3><p>官方文档：<a target="_blank" rel="noopener" href="http://nodejs.cn/learn">http://nodejs.cn/learn</a><br>下面是官方文档首段的介绍　　　　　　　　　　　　　<br><img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/9-%E5%AE%98%E7%BD%91%E4%BB%8B%E7%BB%8D.png"></p>
+<ul>
+<li>Node.js是一个基于Chrome V8引擎的能够在服务器运行JavaScript的跨平台JavaScript运行环境(可以理解为服务端的的JavaScript的代码解析器)</li>
+<li>Node.js采用事件驱动，非阻塞I/O模型（对于这方面的理解，我只知道因为JS是单线程的，不像Java中有多线程）</li>
+<li>node中一部分就是V8引擎，用来解释JS代码，另一部分是封装了大量的工具库，可以用来实现各种文件操作、操作系统、程序等等，因此可以说node打通了JavaScript的前后端。</li>
+<li>node可以用来作为中间层调用分发数据接口，像淘宝服务器后台是Java，在服务器在下面还设置有Node.js搭建在服务器</li>
+</ul>
+<blockquote>
+<p>浏览器中存在着渲染引擎和JS引擎，JS引擎是用来解释JavaScript执行语言的</p>
+</blockquote>
+<blockquote>
+<p>Node.js为JavaScript提供了操作文件、创建Http服务，创建TCP/UDP服务等的接口，让JavaScript可以完成其他后台语言(Java,python等)的工作，譬如对文件操作，处理数据库等。为了安全浏览器中JavaScript是无法实现这些功能的</p>
+</blockquote>
+<blockquote>
+<p>我们经常说Node.js打通了JavaScript的前端和后端，其实原因就是在Node.js出现之前JS是一项完全的客户端技术，被用于浏览器中的各种动画加载，界面交互，对DOM操作等，而后端，即服务端完全是由JAVA等语言实现，在node.js出现后为其提供了上述所说的功能，使得前后端使用同一种语言成为了可能。</p>
+</blockquote>
+<h3 id="node-js能用来做什么"><a href="#node-js能用来做什么" class="headerlink" title="node.js能用来做什么"></a>node.js能用来做什么</h3><ul>
+<li>Web服务API，比如REST</li>
+<li>实时多人游戏</li>
+<li>后端Web服务，譬如跨域、服务端的请求</li>
+<li>基于Web的应用</li>
+<li>多客户端的通信，如即时通信</li>
+<li>本地应用程序等等</li>
+</ul>
+<h3 id="npm介绍"><a href="#npm介绍" class="headerlink" title="npm介绍"></a><strong>npm介绍</strong></h3><blockquote>
+<p>1.npm是随Node.js一起安装的包管理工具，看名字就知道是用来对包进行管理的<br>2.npm允许用户从npm服务器下载和安装第三包进行使用，用户也可以自己编写包进行上传一起丰富这个庞大的生态系统</p>
+</blockquote>
+<ol>
+<li>是全球最大的开源库生态系统<blockquote>
+<p>对于包：在Node.js中一个js文件就可以成为一个模块，将多个模块放在一起完成特定功能就可以看作成一个包，使用npm包管理工具可以在工程中快捷的安装、引入自己需要的包,在安装过程中npm还会将目标包中所依赖的其他包一并下载</p>
+</blockquote>
+</li>
+<li>类似Java语法中的maven，gradle，python中的pip</li>
+</ol>
+<blockquote>
+<p>命令使用</p>
+</blockquote>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 查看npm的命令列表
+npm help
+&#x2F;&#x2F; 查看npm的版本
+npm -v
+&#x2F;&#x2F; 查看npm的配置（设置全局模块，镜像源，缓存，都可以进行查看是否成功）
+npm config ls -l<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>初始化命令</p>
+<ul>
+<li>将当前目录作为工作空间  </li>
+<li>在当前目录下创建一个package.json文件，用来记录名字，版本，依赖等信息。 </li>
+<li>不加-y参数在创建package.json过程中会让你设置名字，版本，依赖等信息，加上后不会提问会直接默认创建</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">npm init
+npm init -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>下面是加上-y后默认创建的package.json中的内容<br><img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/10-%E9%BB%98%E8%AE%A4%E5%88%9B%E5%BB%BA%E7%9A%84packagejson%E6%96%87%E4%BB%B6.png" alt="默认内容"></p>
+<blockquote>
+<p>安装第三方包（install）</p>
+<ul>
+<li>这是npm非常重要也是使用得非常多的功能  </li>
+<li>安装包时会将包下载至node_modules目录中(不存在会自动创建)  </li>
+<li>安装时候不加-g参数会默认安装在当前目录下</li>
+<li>安装的时候加-g参数则是全局安装，会安装至设置的node_global中</li>
+</ul>
+</blockquote>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 安装本地包
+npm install 包名
+&#x2F;&#x2F; 安装全局包 
+npm install 包名 -g
+&#x2F;&#x2F; --save参数(加上此参数会将包信息写进package.json的dependencies中)
+npm install 包名 --save
+&#x2F;&#x2F; --save-dev参数(加上此参数会将包信息添加到package.json的devDependencies中)
+npm install 包名 --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<blockquote>
+<p>dependencies与devDependenices  </p>
+<ul>
+<li>都是指定项目依赖的包</li>
+<li>dependencies——这些包是需要发布到生产环境中去的，devDependencies——这些包只用于开发环境，不用于生产环境<br>【eg】:一个项目需要依赖于JQuery,没有这个包依赖运行就会报错，这时候需要将依赖写进dependenies。如果这个包只在开发测试过程中需要，上线后就不需要了，就写进devDependencies中</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>卸载包(uninstall)【和安装相反其他一样】</p>
+</blockquote>
+<pre class="line-numbers language-JavaScript" data-language="JavaScript"><code class="language-JavaScript">&#x2F;&#x2F; 卸载本地包
+npm uninstall 包名
+&#x2F;&#x2F; 卸载全局包 
+npm uninstall 包名 -g
+&#x2F;&#x2F; --save参数(加上此参数会将包信息写进package.json的dependencies中)
+npm uninstall 包名 --save
+&#x2F;&#x2F; --save-dev参数(加上此参数会将包信息添加到package.json的devDependencies中)
+npm uninstall 包名 --save-dev<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>npm学习网站：<a target="_blank" rel="noopener" href="https://www.runoob.com/nodejs/nodejs-npm.html">https://www.runoob.com/nodejs/nodejs-npm.html</a></p>
+<h2 id="node-js安装和配置"><a href="#node-js安装和配置" class="headerlink" title="node.js安装和配置"></a>node.js安装和配置</h2><blockquote>
+<p><font face="Helvetica">安装Node.js此处介绍两种安装方式，一是通过msi程序引导安装，另一种是通过下载压缩包自己配置环境变量进行安装</font></p>
+</blockquote>
+<blockquote>
+<p>新版的node.js自带npm，安装时会同时安装npm</p>
+</blockquote>
+<h3 id="引导程序安装："><a href="#引导程序安装：" class="headerlink" title="引导程序安装："></a><strong>引导程序安装</strong>：</h3><ul>
+<li><p>第一步：在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载node的msi程序安装文件。<br><img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/1-%E5%AE%98%E7%BD%91%E7%95%8C%E9%9D%A2.png" alt="官网界面"></p>
+</li>
+<li><p>第二步:双击进入安装过程,正常情况下下一步就行了<br>其中有两个过程需要注意<br>  第一：安装模块的选择<br>  <img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/2-%E5%AE%89%E8%A3%85%E9%80%89%E6%8B%A9.png"><br>  Node.js runtime是Node.js的核心模块<br>  npm package manager是包管理工具<br>  Online documentation shortcut是相关介绍文档<br>  Add to PATH是将node和npm添加到环境变量<br>  <strong>默认就行</strong><br>  第二：<br>  <img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/3-%E5%AE%89%E8%A3%85%E9%80%89%E6%8B%A9.png"><br>  勾选后会自动安装2个工具，Python 2和Visual Studio构建工具,这两个构建工具是因为一些npm模块需要使用C/C++编译，如果想要编译这些模块则需要安装，不安装的话后续碰到这些模块会出问题，建议直接勾选避免不必要的麻烦，虽然后续可以手动安装</p>
+</li>
+</ul>
+<blockquote>
+<p>关于这两个构建工具勾选后，Node.js安装完成后会跳出powershell窗口，光标一直会闪，不要关闭，会等一段时间才进行下载，如果安装失败就只能手动安装了。不过使用Node.js不是很多的话不安装也没什么大的影响。</p>
+</blockquote>
+<ul>
+<li>第三步:如果安装时勾选了Add to PATH，环境就已经安装完毕了，打开cmd窗口输入”node -v”和”npm -v”命令进行检测，如下图所示就是已经安装成功了<br><img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/4-%E6%B5%8B%E8%AF%95%E5%AE%89%E8%A3%85.png" alt="测试图片"></li>
+</ul>
+<h3 id="压缩包安装"><a href="#压缩包安装" class="headerlink" title="压缩包安装"></a><strong>压缩包安装</strong></h3><blockquote>
+<p>通过下载压缩包进行安装（这是我最喜欢的方式）</p>
+</blockquote>
+<ul>
+<li>第一步：还是在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">官网</a>下载压缩包<br><img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/5-%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B8%8B%E8%BD%BD.png" alt="下载界面"></li>
+<li>下载解压后和第一种方式安装的内容是一样的</li>
+<li>第二步：配置环境变量<br>将解压的目录路径添加到用户变量的path中去<br>如图：<br><img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/6-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE.png" alt="环境变量"><br>到这里基本工作已经做完，在cmd中输入”node -v”和”npm -v”此时应该是已经能够正常显示的</li>
+</ul>
+<h3 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a><strong>其他配置</strong></h3><blockquote>
+<p>上述两种方式中无论选择哪种方式都是一样的，安装好后就进行接下来的操作</p>
+</blockquote>
+<blockquote>
+<p>在后续使用npm命令(如npm install 模块名 -g)[-g 是代表全局安装的参数，具体可以看npm的相关介绍]会默认安装在【C:\Users\用户名\AppData\Roaming\npm】占用C盘空间,接下来是设置为自定义路径 </p>
+</blockquote>
+<blockquote>
+<p>此处是以第二种方式进行说明</p>
+</blockquote>
+<ul>
+<li><p>配置npm安装模块时全局模块以及缓存cache的路径</p>
+<ul>
+<li>在安装的node文件下新建node_cache和node_global两个文件夹<br>然后在cmd中输入以下两行命令  <pre class="line-numbers language-none"><code class="language-none">npm config set prefix &quot;node_global路径&quot;  
+npm config set cache &quot;node_cache路径&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/7-%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E6%9B%B4%E6%94%B9.png" alt="命令输入"></li>
+</ul>
+</li>
+<li><p>配置安装模块的镜像源  </p>
+<ul>
+<li>在cmd中使用命令 <pre class="line-numbers language-none"><code class="language-none">npm config set registry https:&#x2F;&#x2F;registry.npm.taobao.org --global<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></li>
+<li>进行验证,命令：npm config ls -l<br><img src="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/8--%E6%9B%B4%E6%8D%A2%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F.png" alt="更换配置"></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>之所以更换镜像源是因为npm的默认镜像源是在国外，由于网络的原因会安装失败，因此更换为淘宝的镜像源(<a target="_blank" rel="noopener" href="https://registry.npm.taobao.org/&quot;">https://registry.npm.taobao.org/&quot;</a>) </p>
+</blockquote>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2><h3 id="JS介绍"><a href="#JS介绍" class="headerlink" title="JS介绍"></a>JS介绍</h3><blockquote>
+<p>此处只做简单介绍，毕竟此文章是作为知识广度的扩充</p>
+</blockquote>
+<blockquote>
+<p>建议仔细阅读阮一峰的JavaScript诞生记<br><a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html">http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html</a><br>知乎上关于JavaScript是什么<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/19813265">https://www.zhihu.com/question/19813265</a></p>
+</blockquote>
+<p>JavaScript是什么呢？下面开始扯名词</p>
+<ul>
+<li>JavaScript是一种轻量级的解释型脚本语言<blockquote>
+<p>何为脚本语言  </p>
+<ol>
+<li>介于标记语言和编程语言之间的一种语言</li>
+<li>灵活，语法和结构规则没有编程语言那么严谨和复杂，学习和使用相对简单</li>
+<li>属于解释性语言(相对的是编译型语言)，由解释器进行解释  </li>
+</ol>
+<ul>
+<li>注：现在很多脚本语言已经不止停留于编写简单的用户命令序列的指令，可以编写更为复杂的程序， <strong>脚本语言和编程语言没有明显的界限和规定</strong></li>
+</ul>
+</blockquote>
+</li>
+<li>是一门基于原型，函数先行的语言</li>
+</ul>
+<blockquote>
+<p>基于原型的粗略理解就是JavaScript中是没有Class的，而是直接使用对象。</p>
+</blockquote>
+<blockquote>
+<p>阮一峰JavaScript诞生记部分内容：  </p>
+<ul>
+<li>Javascript中没有类(Class)的概念，因此也就没有”子类”和”父类”的概念，存在一种”原型链”模式来实现继承 <strong>JS虽然没有类，但是存在继承</strong>  </li>
+<li>历史诞生记：  <ol>
+<li>JS是由网景公司(Netscape)的工程师Brendan Eich负责开发  </li>
+<li>诞生的原因：在JS出现之前，浏览器只能用来进行浏览，无法与使用者进行互动，网景公司需要一种网页脚本实现浏览器与网页的互动</li>
+<li>在此时1994年，面向对象编程最兴盛时期，Sun公司与网景结成联盟，允许Java程序以applet（小程序）的形式，直接在浏览器中运行。但是现在Java和JavaScript没有任何关系</li>
+<li>设计之初要求该语言要简单，易于上手</li>
+</ol>
+</li>
+<li>最终JS涵盖了两种语言风格：(简化)函数式编程和(简化)面向对象编程</li>
+<li>JS构造对象，没有类的概念，所以构造对象时new后面直接跟构造函数，例如：<br>  function DOG(name) {<pre><code>  this.name = name;</code></pre>
+  }</li>
+<li>对于其他的例如prototype和__proto__如果想要学习JS需要找其他资料</li>
+</ul>
+</blockquote>
+<ul>
+<li>浏览器中的JavaScript不提供对内存或CPU的底层访问，IO操作等，进行这些操作或者更复杂的操作需要借助Node.js等运行环境</li>
+</ul>
+<blockquote>
+<p>吐糟：第一篇博客，还有许多地方需要改进，目前只能自己作为日后回顾时学习。(ps：前面的几篇都是搭建博客时测试用的草稿一样，不能算博客，本来想删的，思来想去还是留着吧，当个挂件)</p>
+</blockquote>
+<hr>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p>其他大佬的文章：<br>node.js学习：<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/nodejs/node-js-npm.html">https://www.w3cschool.cn/nodejs/node-js-npm.html</a><br>网址：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903906116370445">https://juejin.cn/post/6844903906116370445</a><br>Node.js:<a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000006121183">https://segmentfault.com/a/1190000006121183</a><br>V8引擎：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/27628685">https://zhuanlan.zhihu.com/p/27628685</a><br>V8引擎如何工作：<a target="_blank" rel="noopener" href="https://blog.fundebug.com/2019/07/16/how-does-v8-work/">https://blog.fundebug.com/2019/07/16/how-does-v8-work/</a><br>npm命令：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/hongdada/p/9144668.html">https://www.cnblogs.com/hongdada/p/9144668.html</a><br>Node.js安装:<a target="_blank" rel="noopener" href="https://www.cnblogs.com/liangxfng/p/12675115.html">https://www.cnblogs.com/liangxfng/p/12675115.html</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/77594251">https://zhuanlan.zhihu.com/p/77594251</a></p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">RemMeiko</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://RemMeiko.github.io/1Node.js/">http://RemMeiko.github.io/1Node.js/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">RemMeiko</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Node-js/">
+                                    <span class="chip bg-color">Node.js</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
+                                </a>
+                            
+                                <a href="/tags/%E5%B9%BF%E5%BA%A6/">
+                                    <span class="chip bg-color">广度</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/Java%E5%9F%BA%E7%A1%80/">
+                    <div class="card-image">
+                        
+                        <img src="https://api.mz-moe.cn/img.php" class="responsive-img" alt="Java基础">
+                        
+                        <span class="card-title">Java基础</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-02-02
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%B9%BF%E5%BA%A6/">
+                        <span class="chip bg-color">广度</span>
+                    </a>
+                    
+                    <a href="/tags/Java/">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
+                    <div class="card-image">
+                        
+                        <img src="https://remmeiko.gitee.io/img-bed/anime/3.png" class="responsive-img" alt="环境配置">
+                        
+                        <span class="card-title">环境配置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Intellij-IDEA/" class="post-category">
+                                    Intellij IDEA
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Intellij-IDEA/">
+                        <span class="chip bg-color">Intellij IDEA</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%95%8C%E9%9D%A2%E5%A4%96%E8%A7%82/">
+                        <span class="chip bg-color">界面外观</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+
+        <div class="col s12 m8 l8 copy-right">
+            <!--随机英文句子-->
+            <span id="rainbow" href=''>🌈 获取中...</span>
+            <script>
+            fetch('https://api.eatrice.top')
+            .then(response => response.json())
+            .then(data => {
+            var rainbow = document.getElementById('rainbow');
+            rainbow.innerHTML = data.Content;
+            rainbow.href = "https://rainbow.eatrice.top/?ID=" + data.ID;
+            })
+            .catch(console.error)
+            </script>
+            <br>
+            <a href="/about" target="_blank">Rem Meiko</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            <span id="sitetime"></span>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">11.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+                <span id="busuanzi_container_site_pv" style='display:none'>
+                    <i class="fa fa-heart-o"></i>
+                    本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+                </span>
+            
+            
+                <span id="busuanzi_container_site_uv" style='display:none'>
+                    人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+                </span>
+            
+            <br>
+          
+        </div>
+        
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/RemMeiko" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3132756780@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3132756780" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3132756780" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<script language=javascript>
+    function rainbow() {
+        fetch('https://api.eatrice.top')
+        .then(response => response.json())
+        .then(data => {
+        var rainbow = document.getElementById('rainbow');
+        rainbow.innerHTML = data.Content;
+        rainbow.href = "https://rainbow.eatrice.top/?ID=" + data.ID;
+        })
+        .catch(console.error)
+    }
+</script>
+    
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 08, 02, 00, 00, 00); //北京时间2020-08-02 14:25:50
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        if (diffYears == "0") {
+            document.getElementById("sitetime").innerHTML = "本站已运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        } else {
+            document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        }
+        
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+        var pvcountOffset = 80000;  // 初始化首次数据
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int); // 停止检测
+            }
+        }
+    });
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 樱花特效 -->
+    
+        <script type="text/javascript" src=""></script>
+        
+
+    <!-- 星星跟随-->
+       <!-- 樱花特效 -->
+       
+        <script type="text/javascript" src="/libs/others/follow.js"></script>
+        
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+
+</html>
