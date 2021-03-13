@@ -106,6 +106,11 @@ $(function () {
             subHtmlSelectorRelative: true
         });
 
+        // 点开图片出现loading无法出现图片
+        $(document).find('img[data-original]').each(function(){
+            $(this).parent().attr("href", $(this).attr("data-original"));
+        });
+
         // progress bar init
         const progressElement = window.document.querySelector('.progress-bar');
         if (progressElement) {
