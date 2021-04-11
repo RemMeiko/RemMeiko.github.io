@@ -32,11 +32,14 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
+    <!--自添加代码-->
     <!-- 一言诗词 -->
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"
-charset="utf-8"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -233,7 +236,7 @@ charset="utf-8"></script>
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                        <img src="./medias/让我静静.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                        <img src="./medias/rem.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">RemMeiko</span>
                     </div>
@@ -332,6 +335,28 @@ charset="utf-8"></script>
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/music" class="waves-effect waves-light">
+      
+      <i class="fa fa-music" style="zoom: 0.6;"></i>
+      
+      <span>视听</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-photo" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -344,7 +369,7 @@ charset="utf-8"></script>
 
     <div class="mobile-head bg-color">
         
-        <img src="./medias/让我静静.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./medias/rem.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">RemMeiko</div>
         <div class="logo-desc">
@@ -442,6 +467,28 @@ charset="utf-8"></script>
 			    <i class="fa-fw fas fa-location-arrow"></i>
 			
 			导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/music" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-music"></i>
+			
+			视听
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-photo"></i>
+			
+			相册
 		</a>
           
         </li>
@@ -551,7 +598,7 @@ charset="utf-8"></script>
 
     <script>
         // 每天切换 banner 图.  Switch banner image every day.
-        $('.bg-cover').css('background-image', 'url(/medias/animeimages/3.webp)');
+        $('.bg-cover').css('background-image', 'url(/medias/animeimages/4.webp)');
     </script>
     
     </div>
@@ -566,21 +613,21 @@ charset="utf-8"></script>
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">8</a></span>
+    <span class="count"><a href="/">9</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">8</a></span>
+    <span class="count"><a href="/categories">9</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">16</a></span>
+    <span class="count"><a href="/tags">17</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -596,21 +643,21 @@ charset="utf-8"></script>
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">8</a></span>
+    <span class="count"><a href="/">9</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">8</a></span>
+    <span class="count"><a href="/categories">9</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">16</a></span>
+    <span class="count"><a href="/tags">17</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -756,7 +803,7 @@ charset="utf-8"></script>
         },
         xAxis: {
             type: 'category',
-            data: ["2020-03","2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03"]
+            data: ["2020-04","2020-05","2020-06","2020-07","2020-08","2020-09","2020-10","2020-11","2020-12","2021-01","2021-02","2021-03","2021-04"]
         },
         yAxis: {
             type: 'value',
@@ -766,7 +813,7 @@ charset="utf-8"></script>
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,3,0,0,0,0,1,1,3],
+                data: [0,0,0,0,3,0,0,0,0,1,1,3,1],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -808,7 +855,7 @@ charset="utf-8"></script>
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"Node.js","value":1},{"name":"Intellij IDEA","value":1},{"name":"JAVA","value":1},{"name":"Java","value":1},{"name":"杂谈","value":1},{"name":"C语言","value":1},{"name":"感悟","value":1},{"name":"读书","value":1}],
+                data: [{"name":"Node.js","value":1},{"name":"JAVA","value":1},{"name":"Java","value":1},{"name":"Intellij IDEA","value":1},{"name":"C语言","value":1},{"name":"杂谈","value":1},{"name":"感悟","value":1},{"name":"读书","value":1},{"name":"数据结构","value":1}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -832,7 +879,7 @@ charset="utf-8"></script>
         xAxis: [
             {
                 type: 'category',
-                data: ["广度","Intellij IDEA","记录","Node.js","前端","界面外观","Eclipse","Maven","Java","随手记"]
+                data: ["广度","Intellij IDEA","记录","Node.js","前端","Eclipse","Maven","Java","界面外观","作业"]
             }
         ],
         yAxis: [
@@ -987,12 +1034,6 @@ charset="utf-8"></script>
             
             
             
-            <a href="/tags/%E7%95%8C%E9%9D%A2%E5%A4%96%E8%A7%82/">
-                <span class="chip center-align waves-effect waves-light chip-default">界面外观</span>
-            </a>
-            
-            
-            
             <a href="/tags/Eclipse/">
                 <span class="chip center-align waves-effect waves-light chip-default">Eclipse</span>
             </a>
@@ -1007,14 +1048,8 @@ charset="utf-8"></script>
             
             
             
-            <a href="/tags/%E9%9A%8F%E6%89%8B%E8%AE%B0/">
-                <span class="chip center-align waves-effect waves-light chip-default">随手记</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%9D%82%E8%B0%88/">
-                <span class="chip center-align waves-effect waves-light chip-default">杂谈</span>
+            <a href="/tags/%E7%95%8C%E9%9D%A2%E5%A4%96%E8%A7%82/">
+                <span class="chip center-align waves-effect waves-light chip-default">界面外观</span>
             </a>
             
             
@@ -1037,6 +1072,18 @@ charset="utf-8"></script>
             
             
             
+            <a href="/tags/%E9%9A%8F%E6%89%8B%E8%AE%B0/">
+                <span class="chip center-align waves-effect waves-light chip-default">随手记</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%9D%82%E8%B0%88/">
+                <span class="chip center-align waves-effect waves-light chip-default">杂谈</span>
+            </a>
+            
+            
+            
             <a href="/tags/%E6%84%9F%E6%82%9F/">
                 <span class="chip center-align waves-effect waves-light chip-default">感悟</span>
             </a>
@@ -1051,6 +1098,12 @@ charset="utf-8"></script>
             
             <a href="/tags/%E5%8F%A5%E5%AD%90/">
                 <span class="chip center-align waves-effect waves-light chip-default">句子</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%EF%BC%8C%E8%80%83%E7%A0%94/">
+                <span class="chip center-align waves-effect waves-light chip-default">数据结构，查找算法，考研</span>
             </a>
             
             
@@ -1073,19 +1126,19 @@ charset="utf-8"></script>
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
             <div class="img-item" data-src="/medias/featureimages/0.jpg">
-                <img src="./medias/让我静静.gif" data-original="/medias/featureimages/0.jpg" class="responsive-img">
+                <img src="./medias/rem.gif" data-original="/medias/featureimages/0.jpg" class="responsive-img">
             </div>
         </div>
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
             <div class="img-item" data-src="/medias/featureimages/1.jpg">
-                <img src="./medias/让我静静.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img">
+                <img src="./medias/rem.gif" data-original="/medias/featureimages/1.jpg" class="responsive-img">
             </div>
         </div>
         
         <div class="photo col s12 m6 l4" data-aos="fade-up">
             <div class="img-item" data-src="/medias/featureimages/2.jpg">
-                <img src="./medias/让我静静.gif" data-original="/medias/featureimages/2.jpg" class="responsive-img">
+                <img src="./medias/rem.gif" data-original="/medias/featureimages/2.jpg" class="responsive-img">
             </div>
         </div>
         
@@ -1125,66 +1178,14 @@ charset="utf-8"></script>
     </div>
 </main>
 
-    <footer class="page-footer bg-color">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
+   
     <div class="container row center-align" style="margin-bottom: 0px !important;">
-
         <div class="col s12 m8 l8 copy-right">
-            <!--随机英文句子-->
+            <!--随机英文句子
             <span id="rainbow" href=''>🌈 获取中...</span>
             <script>
             fetch('https://api.eatrice.top')
@@ -1196,7 +1197,12 @@ charset="utf-8"></script>
             })
             .catch(console.error)
             </script>
-            <br>
+            -->
+            <span id="busuanzi_container_site_uv">
+                <i class="fa fa-users"></i>
+                次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+
             <a href="/about" target="_blank">Rem Meiko</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -1204,7 +1210,7 @@ charset="utf-8"></script>
             <span id="sitetime"></span>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12k</span>&nbsp;字
+                class="white-color">23.6k</span>&nbsp;字
             
             
             
@@ -1311,26 +1317,6 @@ charset="utf-8"></script>
 </script>
 
 <script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);  // 50ms周期检测函数
-        var pvcountOffset = 80000;  // 初始化首次数据
-        var uvcountOffset = 20000;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int); // 停止检测
-            }
-        }
-    });
-</script>
-
-<script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -1339,6 +1325,7 @@ charset="utf-8"></script>
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
+    
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1527,12 +1514,12 @@ $(function () {
     <script type="text/javascript" src="/js/self/fireworks.js"></script>
     -->
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":150,"height":350},"mobile":{"show":false},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 
 </html>

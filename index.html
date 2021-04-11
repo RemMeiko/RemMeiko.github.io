@@ -32,11 +32,14 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
+    <!--自添加代码-->
     <!-- 一言诗词 -->
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js"
-charset="utf-8"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
 
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 
 
@@ -233,7 +236,7 @@ charset="utf-8"></script>
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                        <img src="./medias/让我静静.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                        <img src="./medias/rem.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">RemMeiko</span>
                     </div>
@@ -332,6 +335,28 @@ charset="utf-8"></script>
     
   </li>
   
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/music" class="waves-effect waves-light">
+      
+      <i class="fa fa-music" style="zoom: 0.6;"></i>
+      
+      <span>视听</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-photo" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
   <li>
     <a href="#searchModal" class="modal-trigger waves-effect waves-light">
       <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
@@ -344,7 +369,7 @@ charset="utf-8"></script>
 
     <div class="mobile-head bg-color">
         
-        <img src="./medias/让我静静.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="./medias/rem.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">RemMeiko</div>
         <div class="logo-desc">
@@ -442,6 +467,28 @@ charset="utf-8"></script>
 			    <i class="fa-fw fas fa-location-arrow"></i>
 			
 			导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/music" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-music"></i>
+			
+			视听
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-photo"></i>
+			
+			相册
 		</a>
           
         </li>
@@ -591,7 +638,7 @@ charset="utf-8"></script>
 
     <script>
         // 每天切换 banner 图.  Switch banner image every day.
-        $('.bg-cover').css('background-image', 'url(/medias/animeimages/4.webp)');
+        $('.bg-cover').css('background-image', 'url(/medias/animeimages/3.webp)');
     </script>
     
 
@@ -722,25 +769,25 @@ charset="utf-8"></script>
             <div class="card">
                 <div class="card-content">
                     
+                   <!--添加梦想卡片中左上角的一言-->
+                   <i class="fa fa-volume-up fa-lg fa-fw text-color"></i> <span id="hitokoto">一言API请求超时。请稍后重试。</span>
+
+                   
                         <div class="dream">
     
     <div class="title center-align">
-        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;我的梦想
+        <i class="far fa-lightbulb"></i>&nbsp;&nbsp;梦想
     </div>
     
     <div class="row">
         <div class="col l8 offset-l2 m10 offset-m1 s10 offset-s1 center-align text">
-            不是每个人都应该像我这样去建造一座水晶大教堂，但是每个人都应该拥有自己的梦想，设计自己的梦想，追求自己的梦想，实现自己的梦想。梦想是生命的灵魂，是心灵的灯塔，是引导人走向成功的信仰。有了崇高的梦想，只要矢志不渝地追求，梦想就会成为现实，奋斗就会变成壮举，生命就会创造奇迹。——罗伯·舒乐
+            此时此刻,阿拉斯加的鱼正跃出水面, 大洋彼岸的海鸥正拂过费城, 极图的夜空散满了五彩斑斓。 这些你从未曾见过的风景, 那些你未曾遇到过的人, 那些你想要的一切，正一步步向你走来。 --请不要停止努力
         </div>
     </div>
 </div>
 
+                        
                     
-
-                    
-
-                    
-
                     
                     <div id="recommend-sections" class="recommend">
                         
@@ -757,23 +804,24 @@ charset="utf-8"></script>
     
     <div class="col s12" >
         
-             <div class="post-card" style="background-image: url('http://acg.toubiec.cn/random.php')">
+             <div class="post-card" style="background-image: url('https://remmeiko.gitee.io/img-bed/anime/wallhaven-72pe8v_1920x1080.png')">
         
             <div class="post-body">
                 <div class="post-categories">
                     
                         
-                            <a href="/categories/Node-js/" class="category">Node.js</a>
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="category">数据结构</a>
                         
                     
                 </div>
-                <a href="/1Node.js/">
-                    <h3 class="post-title">关于Node.js的简单学习</h3>
+                <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%9F%A5%E6%89%BE/">
+                    <h3 class="post-title">数据结构之查找算法</h3>
                 </a>
-                <p class="post-description">知识需要足够的广度和一定的深度
+                <p class="post-description">[TOC]
 
-前言：因为搭建博客接触到node.js，所以对node.js进行简单的了解，扩充一下广度同时记录一些大佬的文章方便自己日后查询，记录如下</p>
-                <a href="/1Node.js/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
+
+写在前面：这些内容是以考研的角度去学习和理解的，很多考试中需要用到的内容在实际应用中可能用不上，比如其中的计算问题，但是如果掌握这些东西会帮你更好的理解这</p>
+                <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%9F%A5%E6%89%BE/" class="read-more btn waves-effect waves-light" style="background: linear-gradient(to right, #FF5E3A 0%, #FF2A68 100%)" target="_blank">
                     <i class="icon far fa-eye fa-fw"></i>阅读更多
                 </a>
             </div>
@@ -800,12 +848,65 @@ charset="utf-8"></script>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/%E5%85%B3%E4%BA%8E%E4%B8%AA%E4%BA%BA%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%82%9F/">
+                    <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%9F%A5%E6%89%BE/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/10.png" class="responsive-img" alt="关于个人的一些感悟">
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/wallhaven-72pe8v_1920x1080.png" class="responsive-img" alt="数据结构之查找算法">
                             
-                            <span class="card-title">关于个人的一些感悟</span>
+                            <span class="card-title">数据结构之查找算法</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                [TOC]
+
+
+写在前面：这些内容是以考研的角度去学习和理解的，很多考试中需要用到的内容在实际应用中可能用不上，比如其中的计算问题，但是如果掌握这些东西会帮你更好的理解这些内容。
+
+
+
+这篇关于查找的博客也只是用来记录以便于后续复习的，所以
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%EF%BC%8C%E8%80%83%E7%A0%94/">
+                            <span class="chip bg-color">数据结构，查找算法，考研</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8/">
+                        <div class="card-image">
+                            
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/10.png" class="responsive-img" alt="云边有个小卖部">
+                            
+                            <span class="card-title">云边有个小卖部</span>
                         </div>
                     </a>
 
@@ -813,9 +914,9 @@ charset="utf-8"></script>
                         <div class="summary block-with-text">
                             
                                 
-前言：这篇文章收录的只是自己的一些感悟或者某时某刻突然想写点东西便写下来了，虽然只是一篇文章，但是后续所有的这些都会统一收录在这里，我也不是很希望太多这些混杂在学习文章中，而且设置这么多密码也记不住(emmmmm)
+前言：此文章收录的是自己的一些感悟和一些随手记录的琐事，如果能当成日记也不错(emmmmm)。有密码拒绝围观。后续所有的这些都会统一收录在这里，我也不是很希望太多这些混杂在学习文章中，而且设置这么多密码也记不住(emmmmm)
 
-
+写在前面
                             
                         </div>
                         <div class="publish-info">
@@ -856,7 +957,7 @@ charset="utf-8"></script>
                     <a href="/%E5%85%B3%E4%BA%8E%E6%88%91%E9%81%87%E8%A7%81%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/8.png" class="responsive-img" alt="关于我遇见过的那些句子">
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/8.png" class="responsive-img" alt="关于我遇见过的那些句子">
                             
                             <span class="card-title">关于我遇见过的那些句子</span>
                         </div>
@@ -868,7 +969,8 @@ charset="utf-8"></script>
                                 
 瀑布的水逆流而上，蒲公英种子从远处飘回，聚成伞的模样太阳从西边升起，落向东方。子弹退回枪膛，运动员回到起跑线上我交回录取通知书，忘了十年寒窗。厨房里飘来饭菜的香，你把我的卷子签好名字，关掉电视，帮我把书包背上。你还在我身旁
 
-remmei
+
+待她再次送
                             
                         </div>
                         <div class="publish-info">
@@ -909,7 +1011,7 @@ remmei
                     <a href="/Tetris(Linux%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A11)/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/7.jpg" class="responsive-img" alt="Linux作业(俄罗斯方块Tetris)">
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/7.jpg" class="responsive-img" alt="Linux作业(俄罗斯方块Tetris)">
                             
                             <span class="card-title">Linux作业(俄罗斯方块Tetris)</span>
                         </div>
@@ -972,7 +1074,7 @@ tetris.h
                     <a href="/Java%E5%9F%BA%E7%A1%80/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/5.png" class="responsive-img" alt="Java基础">
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/5.png" class="responsive-img" alt="Java基础">
                             
                             <span class="card-title">Java基础</span>
                         </div>
@@ -1028,7 +1130,7 @@ tetris.h
                     <a href="/1Node.js/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="http://acg.toubiec.cn/random.php" class="responsive-img" alt="关于Node.js的简单学习">
+                            <img src="./medias/rem.gif" data-original="http://acg.toubiec.cn/random.php" class="responsive-img" alt="关于Node.js的简单学习">
                             
                             <span class="card-title">关于Node.js的简单学习</span>
                         </div>
@@ -1086,7 +1188,7 @@ Node.jsNode.js是什么官方文档：http://nod
                     <a href="/3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/3.png" class="responsive-img" alt="环境配置">
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/3.png" class="responsive-img" alt="环境配置">
                             
                             <span class="card-title">环境配置</span>
                         </div>
@@ -1137,7 +1239,7 @@ Intellij IDEA 2019.3.1(一)更改
                     <a href="/2%E7%BC%96%E7%A8%8B%E9%97%AE%E9%A2%98/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/4.jpg" class="responsive-img" alt="编程问题">
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/4.jpg" class="responsive-img" alt="编程问题">
                             
                             <span class="card-title">编程问题</span>
                         </div>
@@ -1196,7 +1298,7 @@ Intellij IDEA 2019.3.1(一)更改
                     <a href="/hello-world/">
                         <div class="card-image">
                             
-                            <img src="./medias/让我静静.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/1.png" class="responsive-img" alt="Hello World">
+                            <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/1.png" class="responsive-img" alt="Hello World">
                             
                             <span class="card-title">Hello World</span>
                         </div>
@@ -1212,7 +1314,7 @@ Intellij IDEA 2019.3.1(一)更改
                         </div>
                         <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-02
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-01
                             </span>
                             <span class="publish-author">
                                 
@@ -1251,66 +1353,14 @@ Intellij IDEA 2019.3.1(一)更改
 
 
 
-    <footer class="page-footer bg-color">
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<footer class="page-footer bg-color">
     
-        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
-<style>
-    .aplayer .aplayer-lrc p {
-        
-        display: none;
-        
-        font-size: 12px;
-        font-weight: 700;
-        line-height: 16px !important;
-    }
-
-    .aplayer .aplayer-lrc p.aplayer-lrc-current {
-        
-        display: none;
-        
-        font-size: 15px;
-        color: #42b983;
-    }
-
-    
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
-        left: -66px !important;
-    }
-
-    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
-        left: 0px !important;
-    }
-
-    
-</style>
-<div class="">
-    
-    <div class="row">
-        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
-                   server="netease"
-                   type="playlist"
-                   id="503838841"
-                   fixed='true'
-                   autoplay='false'
-                   theme='#42b983'
-                   loop='all'
-                   order='random'
-                   preload='auto'
-                   volume='0.7'
-                   list-folded='true'
-        >
-        </meting-js>
-    </div>
-</div>
-
-<script src="/libs/aplayer/APlayer.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
-
-    
+   
     <div class="container row center-align" style="margin-bottom: 0px !important;">
-
         <div class="col s12 m8 l8 copy-right">
-            <!--随机英文句子-->
+            <!--随机英文句子
             <span id="rainbow" href=''>🌈 获取中...</span>
             <script>
             fetch('https://api.eatrice.top')
@@ -1322,7 +1372,12 @@ Intellij IDEA 2019.3.1(一)更改
             })
             .catch(console.error)
             </script>
-            <br>
+            -->
+            <span id="busuanzi_container_site_uv">
+                <i class="fa fa-users"></i>
+                次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+
             <a href="/about" target="_blank">Rem Meiko</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
@@ -1330,7 +1385,7 @@ Intellij IDEA 2019.3.1(一)更改
             <span id="sitetime"></span>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">12k</span>&nbsp;字
+                class="white-color">23.6k</span>&nbsp;字
             
             
             
@@ -1437,26 +1492,6 @@ Intellij IDEA 2019.3.1(一)更改
 </script>
 
 <script>
-    $(document).ready(function () {
-
-        var int = setInterval(fixCount, 50);  // 50ms周期检测函数
-        var pvcountOffset = 80000;  // 初始化首次数据
-        var uvcountOffset = 20000;
-
-        function fixCount() {
-            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
-                clearInterval(int);
-            }
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
-                clearInterval(int); // 停止检测
-            }
-        }
-    });
-</script>
-
-<script>
     var _hmt = _hmt || [];
     (function() {
       var hm = document.createElement("script");
@@ -1465,6 +1500,7 @@ Intellij IDEA 2019.3.1(一)更改
       s.parentNode.insertBefore(hm, s);
     })();
     </script>
+    
 
     <!-- 搜索遮罩框 -->
 <div id="searchModal" class="modal">
@@ -1653,12 +1689,12 @@ $(function () {
     <script type="text/javascript" src="/js/self/fireworks.js"></script>
     -->
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script><!-- hexo-inject:begin --><!-- hexo-inject:end --><script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":150,"height":350},"mobile":{"show":false},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 preloadRatio: 1,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
 
 </html>

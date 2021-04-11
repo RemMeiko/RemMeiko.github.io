@@ -1,0 +1,2822 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta name="keywords" content="数据结构之查找算法, 技术宅改变世界">
+    <meta name="description" content="技术宅改变世界">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>数据结构之查找算法 | RemMeiko</title>
+    <link rel="stylesheet" href="/css/highlight/styles/vs2015.css">
+
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+    <!--自添加代码-->
+    <!-- 一言诗词 -->
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <!--一言-->
+    <script src="https://v1.hitokoto.cn/?c=d&encode=js&select=%23hitokoto" defer></script>
+
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+
+
+
+
+    <style type="text/css" lang="css">
+	#loading-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-height: 100vh;
+	width: 100vw;
+	z-index: 9999;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #FFF;
+	text-align: center;
+	/* loader页面消失采用渐隐的方式*/
+	-webkit-transition: opacity 1s ease;-moz-transition: opacity 1s ease;-o-transition: opacity 1s ease;
+	transition: opacity 1s ease;
+}
+.loading-image {
+	width: 120px;
+	height: 50px;
+	transform: translate(-50% );
+}
+
+.loading-image div:nth-child(2) {-webkit-animation: pacman-balls 1s linear 0s infinite;
+	animation: pacman-balls 1s linear 0s infinite
+}
+.loading-image div:nth-child(3) {-webkit-animation: pacman-balls 1s linear.33s infinite;
+	animation: pacman-balls 1s linear.33s infinite
+}
+.loading-image div:nth-child(4) {-webkit-animation: pacman-balls 1s linear.66s infinite;
+	animation: pacman-balls 1s linear.66s infinite
+}.loading-image div:nth-child(5) {-webkit-animation: pacman-balls 1s linear.99s infinite;
+	animation: pacman-balls 1s linear.99s infinite
+}.loading-image div:first-of-type {
+	width: 0;
+	height: 0;
+	border: 25px solid#49b1f5;
+	border-right-color: transparent;
+	border-radius: 25px;-webkit-animation: rotate_pacman_half_up.5s 0s infinite;
+	animation: rotate_pacman_half_up.5s 0s infinite;
+}.loading-image div:nth-child(2) {
+	width: 0;
+	height: 0;
+	border: 25px solid#49b1f5;
+	border-right-color: transparent;
+	border-radius: 25px;-webkit-animation: rotate_pacman_half_down.5s 0s infinite;
+	animation: rotate_pacman_half_down.5s 0s infinite;
+	margin-top: -50px;
+}@-webkit-keyframes rotate_pacman_half_up {
+	0%{
+		transform: rotate(270deg)
+	}
+	50%{
+		transform: rotate(1turn)
+	}
+	to {
+		transform: rotate(270deg)
+	}
+}@keyframes rotate_pacman_half_up {
+	0%{
+		transform: rotate(270deg)
+	}
+	50%{
+		transform: rotate(1turn)
+	}
+	to {
+		transform: rotate(270deg)
+	}
+}@-webkit-keyframes rotate_pacman_half_down {
+	0%{
+		transform: rotate(90deg)
+	}
+	50%{
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(90deg)
+	}
+}@keyframes rotate_pacman_half_down {
+	0%{
+		transform: rotate(90deg)
+	}
+	50%{
+		transform: rotate(0deg)
+	}
+	to {
+		transform: rotate(90deg)
+	}
+}@-webkit-keyframes pacman-balls {
+	75%{
+		opacity: .7
+	}
+	to {
+		transform: translate(-100px, -6.25px)
+	}
+}@keyframes pacman-balls {
+	75%{
+		opacity: .7
+	}
+	to {
+		transform: translate(-100px, -6.25px)
+	}
+}.loading-image div:nth-child(3),
+.loading-image div:nth-child(4),
+.loading-image div:nth-child(5),
+.loading-image div:nth-child(6) {
+	background-color: #49b1f5;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+	margin: 2px;
+	width: 10px;
+	height: 10px;
+	position: absolute;
+	transform: translateY(-6.25px);
+	top: 25px;
+	left: 100px;
+}.loading-text {
+	margin-bottom: 20vh;
+	text-align: center;
+	color: #2c3e50;
+	font-size: 2rem;
+	box-sizing: border-box;
+	padding: 0 10px;
+	text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}@media only screen and(max-width: 500px) {.loading-text {
+		font-size: 1.5rem;
+	}
+}.fadeout {
+	opacity: 0;
+	filter: alpha(opacity = 0);
+}
+/* logo出现动画
+	*/
+@-webkit-keyframes fadeInDown {
+	0%{
+		opacity: 0;-webkit-transform: translate3d(0, -100%, 0);
+		transform: translate3d(0, -100%, 0)
+	}
+	100%{
+		opacity: 1;-webkit-transform: none;
+		transform: none
+	}
+}@keyframes fadeInDown {
+	0%{
+		opacity: 0;-webkit-transform: translate3d(0, -100%, 0);
+	}
+}
+</style>
+<script>
+	(function() {
+		const loaded = function() {
+			setTimeout(function() {
+				const loader = document.getElementById("loading-container");
+				loader.className = "fadeout"; //使用渐隐的方法淡出loading page // document.getElementById("body-wrap").style.display="flex"; 
+				setTimeout(function() {
+					loader.style.display = "none";
+				},
+				2500);
+			},
+            1000);
+        };
+			//强制显示loading page 1s };
+			loaded();
+        })()
+</script>
+ 
+
+<body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!--加载动画-->
+    
+        <div id="loading-container"> 
+            <p class="loading-text">我喜欢你眼中的星辰，喜欢你轻唤我的名字</p>
+            <div class="loading-image"> 
+                 <div></div>
+                 <div></div>
+                 <div></div> 
+                 <div></div> 
+                 <div></div> 
+            </div> 
+         </div> 
+    
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    <div>
+                        
+                        <img src="./medias/rem.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">RemMeiko</span>
+                    </div>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/navigate" class="waves-effect waves-light">
+      
+      <i class="fas fa-location-arrow" style="zoom: 0.6;"></i>
+      
+      <span>导航</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/music" class="waves-effect waves-light">
+      
+      <i class="fa fa-music" style="zoom: 0.6;"></i>
+      
+      <span>视听</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/galleries" class="waves-effect waves-light">
+      
+      <i class="fas fa-photo" style="zoom: 0.6;"></i>
+      
+      <span>相册</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="./medias/rem.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">RemMeiko</div>
+        <div class="logo-desc">
+            
+            技术宅改变世界
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/navigate" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-location-arrow"></i>
+			
+			导航
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/music" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fa fa-music"></i>
+			
+			视听
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/galleries" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-photo"></i>
+			
+			相册
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://remmeiko.gitee.io/img-bed/anime/wallhaven-72pe8v_1920x1080.png')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">数据结构之查找算法</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+        background-color: rgb(255, 255, 255,0.7);
+        border-radius: 10px;
+        box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1) !important;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%EF%BC%8C%E8%80%83%E7%A0%94/">
+                                <span class="chip bg-color">数据结构，查找算法，考研</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                数据结构
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-04-12
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-04-12
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    11.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    39 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>[TOC]</p>
+<hr>
+<blockquote>
+<p>写在前面：这些内容是以考研的角度去学习和理解的，很多考试中需要用到的内容在实际应用中可能用不上，比如其中的计算问题，但是如果掌握这些东西会帮你更好的理解这些内容。</p>
+</blockquote>
+<blockquote>
+<ul>
+<li>这篇关于查找的博客也只是用来记录以便于后续复习的，所以很多地方只是浅谈，并没有代码的实现</li>
+<li>如果有缘发现这篇文章想要深入了解或者因为作者表达能力差而看不懂以及有错的地方，欢迎留言指出来，我会尽快去完善的，期待有缘人</li>
+<li>内容多和杂，如果有机会我进一步进行梳理，将其重新梳理一片文章(会更注重于代码)</li>
+<li>本来只是想简单写一下的，但是不小心就get不到重点了</li>
+<li>本来打算等逐步完善和优化后再发出来的，但那样继续往前总感觉有所顾及，所以就先给这几天查找的复习暂时告一段落吧。</li>
+</ul>
+</blockquote>
+<hr>
+<h1 id="导学"><a href="#导学" class="headerlink" title="导学"></a>导学</h1><p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410091941738.png" alt="概览"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411105134631.png" alt="总体"></p>
+<h1 id="一-概念"><a href="#一-概念" class="headerlink" title="(一)概念"></a>(一)概念</h1><ul>
+<li>查找：在数据集合中查找特定元素的过程</li>
+<li>查找表(查找结构)：同一类型数据元素构成的集合<ul>
+<li>静态查找表:只涉及查找，不存在修改<ul>
+<li>适用：顺序查找，折半查找，散列查找等</li>
+</ul>
+</li>
+<li>动态查找表:动态插入和删除，对查找表进行修改<ul>
+<li>适用：二叉排序树，散列查找等</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>所有数据结构都可以看作是查找表，对于折半查找和顺序查找这些都属于查找算法</p>
+</blockquote>
+<ul>
+<li>关键字：数据元素中唯一标识该元素的某数据项的值<ul>
+<li>主关键字：此关键字能唯一表示一个数据元素</li>
+<li>次关键字：此关键字用以识别若干记录(一对多)</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>说明：在查找表中每个数据元素就相当于一条记录，包含有不同的数据项，例如拿学生为例，一个学生作为数据元素，那么学号，身高，姓名就是这个元素中的数据项，每个学生都有特定的学号，因此学号可以作为关键字。(当然如果数据项包含身份证号，你用身份证号走位关键字也可以)</p>
+</blockquote>
+<h4 id="0x01平均查找长度-重点"><a href="#0x01平均查找长度-重点" class="headerlink" title="0x01平均查找长度(重点)"></a>0x01平均查找长度(重点)</h4><ul>
+<li><strong>注意</strong>：作为查找算法效率衡量的主要指标，那么查找算法的性能分析肯定是重点分析平均查找长度的，因此必须熟练掌握。</li>
+</ul>
+<blockquote>
+<p>提一嘴，算法效率的度量前面学过时间和空间复杂度，但是算法效率的度量不是只取决于时间和空间复杂度，针对不同的算法还可能会有其他一些辅助度量，如查找算法中的平均查找长度。(不过需要注意后面学排序算法时，其稳定性并不是用来衡量算法的优劣的，只是用来描述算法性质的)，下面开始说明平均查找长度</p>
+</blockquote>
+<ul>
+<li>平均查找长度：所有查找过程中进行关键字比较次数的平均值<ul>
+<li>一次查找长度是指需要比较的关键字次数</li>
+<li>成功平均查找长度：所有元素查找成功的情况</li>
+<li>失败平均查找长度：所有元素查找失败的情况</li>
+</ul>
+</li>
+<li>数学公式定义：</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222237211.png" alt="image-20210411222237211"></p>
+<blockquote>
+<p>没有特殊说明的情况下，默认每个数据元素的查找概率是相等的，记住就是每个元素查找时比较的次数乘以概率然后加起来</p>
+</blockquote>
+<p>举个例子：</p>
+<table>
+<thead>
+<tr>
+<th>下标</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>查找集中的值</td>
+<td>4</td>
+<td>3</td>
+<td>5</td>
+</tr>
+</tbody></table>
+<p>每个元素的查找概率是1/3,而查找成功时对应的比较次数依次是1，2，3，因此ASL=2（这是成功平均查找长度）</p>
+<p>查找失败时对应的比较次数是4，4，4因此ASL=4</p>
+<ul>
+<li>对于不同的概率计算方法是一样的</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410095936434.png"></p>
+<blockquote>
+<p>(成功)平均查找长度就是1/2*1 + 1/3 *2 + 1/6 * 3 = 5/3</p>
+</blockquote>
+<h1 id="二-查找算法"><a href="#二-查找算法" class="headerlink" title="(二)查找算法"></a>(二)查找算法</h1><ul>
+<li>算法的实现取决于数据结构的选取</li>
+<li>数据结构三要素：逻辑结构，存储结构，数据的运算</li>
+<li>下面的学习是以逻辑结构进行划分的</li>
+</ul>
+<blockquote>
+<p>这里我有个疑惑，就是散列结构属不属于线性结构</p>
+<p>线性结构：集合中数据元素之间只存在一对一的关系</p>
+<p>非线性结构有更细的划分(集合—没关系，树形结构—一对多，图形结构—多对多)</p>
+<p>那么散列结构中数据元素之间存不存在一对一的关系呢？</p>
+</blockquote>
+<h2 id="0x02线性结构"><a href="#0x02线性结构" class="headerlink" title="0x02线性结构"></a>0x02线性结构</h2><h3 id="1-顺序查找-一般线性表"><a href="#1-顺序查找-一般线性表" class="headerlink" title="1.顺序查找(一般线性表)"></a>1.顺序查找(一般线性表)</h3><ul>
+<li>思想：又称线性查找，从前往后或者从后往前依次对比进行查找</li>
+<li>优点：对数据元素存储没有要求，顺序表、链表都可以</li>
+<li>缺点：当n较大时，平均查找长度较大，效率低</li>
+<li>重点注意：对于线性的链表，只能进行顺序查找</li>
+</ul>
+<h4 id="1-实现代码"><a href="#1-实现代码" class="headerlink" title="(1)实现代码"></a>(1)实现代码</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> <span class="token punctuation">{</span>    <span class="token comment" spellcheck="true">// 查找表的结构</span>
+    Elemtype <span class="token operator">*</span> elem<span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 指针是采用动态分配，使用时分配</span>
+    <span class="token keyword">int</span> TableLen<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 查找表长度</span>
+<span class="token punctuation">}</span>Stable<span class="token punctuation">;</span>
+<span class="token keyword">int</span> <span class="token function">Search_Seq</span><span class="token punctuation">(</span>Stable S<span class="token punctuation">,</span>Elemtype key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    S<span class="token punctuation">.</span>elem<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> key<span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 哨兵</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span>i <span class="token operator">=</span> S<span class="token punctuation">.</span>TableLen<span class="token punctuation">;</span>i <span class="token operator">!=</span> key<span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> i<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>代码不难，但是这里要介绍一个“哨兵”的概念，在这份代码中，S.elem[0]就是哨兵，引入“哨兵”可以避免许多不必要的判断语句，并且随着程序规模增大，效率提升也会越大</li>
+<li>“哨兵”需要额外分配一个空间，这里是将数组下标为0的位置留空作为”哨兵</li>
+<li>注意：在查找时，元素若是查找失败是会和“哨兵”进行一次额外比较的，但是有些考题对于哨兵的这一次比较是不算在查找次数之内的，因此查找长度计算会有所不同，看学校</li>
+</ul>
+<h4 id="2-平均查找长度"><a href="#2-平均查找长度" class="headerlink" title="(2)平均查找长度"></a>(2)平均查找长度</h4><ul>
+<li><p>成功平均查找长度(这里与哨兵的比较是计算在内的)：</p>
+<ul>
+<li>第i个数查找成功需要比较n-i+1次，如果是从前往后进行比较第i个数比较的次数就是i</li>
+<li>每一个元素查找成功的概率是1/n，也就是说P为1/n</li>
+<li>平均查找长度为</li>
+</ul>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222416064.png"></p>
+<ul>
+<li><p>失败平均查找长度为：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222427692.png"></p>
+</li>
+</ul>
+<h4 id="3-有序表的顺序查找"><a href="#3-有序表的顺序查找" class="headerlink" title="(3)有序表的顺序查找"></a>(3)有序表的顺序查找</h4><ul>
+<li><p>思想：略微特殊的线性表，其中的关键字是有序的，在查找失败时就不用继续往下查找了(比如升序序列，发现第4个元素大于查找的元素，那么后续的元素一定是都大于此元素的，就没有继续查找的必要了)，从而降低失败平均查找长度</p>
+</li>
+<li><p>成功平均查找长度和一般线性表一样</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408104215522.png"></p>
+</li>
+<li><p><strong>有序表的顺序查找和折半查找不一样，有序表的顺序查找一样适用于链表，而折半查找则无法用在链表的查询上</strong></p>
+</li>
+</ul>
+<h3 id="2-折半查找"><a href="#2-折半查找" class="headerlink" title="2.折半查找"></a>2.折半查找</h3><ul>
+<li>又称二分查找</li>
+<li>基本思想：以升序序列为例，将key值与表中间位置进行比较，相等则查找成功，若小于则在表的左边继续查找，大于则在右边继续查找，每次都是与中间位置进行对比</li>
+<li>注意：只适用于有序的顺序表，同时折半查找需要方便的定位查找区域，所以要求线性表必须具有随机存取的特性，因此只适用于顺序存储结构，不适用于链式存储结构，同时要求元素按关键字有序排列</li>
+</ul>
+<h4 id="1-代码实现"><a href="#1-代码实现" class="headerlink" title="(1)代码实现"></a>(1)代码实现</h4><pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">BinarySearch</span><span class="token punctuation">(</span>sqLList L<span class="token punctuation">,</span> <span class="token keyword">int</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> low <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> high <span class="token operator">=</span> L<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span> mid<span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>low <span class="token operator">&lt;=</span> high<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>low <span class="token operator">+</span> high<span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">// 取中间位置，向下取整</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%d\n"</span><span class="token punctuation">,</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>L<span class="token punctuation">.</span>data<span class="token punctuation">[</span>mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> mid<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>L<span class="token punctuation">.</span>data<span class="token punctuation">[</span>mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span> data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            low <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">else</span>
+            high <span class="token operator">=</span> mid <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="2-查找过程"><a href="#2-查找过程" class="headerlink" title="(2)查找过程"></a>(2)查找过程</h4><ul>
+<li>设定一个mid值存储中间位置的值，这个中间位置mid的值为low和high的和除以2然后向下或者向上取整</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>7</td>
+<td>10</td>
+<td>13</td>
+<td>16</td>
+<td>19</td>
+<td>29</td>
+</tr>
+</tbody></table>
+<p>查找29(这里采用向下取整)</p>
+<p>第一次：low=0指向7，high=5指向29,此时mid=2指向13</p>
+<blockquote>
+<p>13&lt;29,此时范围缩小至[3,5]，(因为13已经比较过了，所以直接从下一个开始)</p>
+</blockquote>
+<p>第二次：low=3指向16，high=5指向29,此时mid=(3+5)/2=4指向19</p>
+<blockquote>
+<p>13&lt;20,此时范围缩小至[5,5]</p>
+</blockquote>
+<p>第三次：low=5指向29，high=5指向29,此时mid=5指向29</p>
+<blockquote>
+<p>相等–&gt;结束</p>
+</blockquote>
+<ul>
+<li><strong>解题注意：</strong>向上取整和向下取整生成的判定树是有区别的<ul>
+<li>向上取整：左子树节点数 &gt;= 右子树节点数</li>
+<li>向下取整：右子树节点数 &gt;= 左子树节点数</li>
+<li>也就是说：<strong>一颗判定树中要么左子树节点数全部大于等于右子树节点数，要么右子树节点数全部大于左子树节点数</strong></li>
+</ul>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408113202825.png"></p>
+<h4 id="3-判定树-重点"><a href="#3-判定树-重点" class="headerlink" title="(3)判定树(重点)"></a>(3)判定树(重点)</h4><ul>
+<li>是折半查找过程生成的一棵二叉树，准确讲是用来折半查找过程的一种描述</li>
+<li><strong>判定树是一颗平衡二叉树同时也是一颗二叉排序树</strong></li>
+</ul>
+<blockquote>
+<p>注意：判定树描述的是折半查找过程中所有节点的查找过程，而折半查找中关键字比较序列指的是这个二叉排序树上的一条路径而已</p>
+</blockquote>
+<p>​    看下面题目：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408111558332.png"></p>
+<h4 id="4-判定树说明"><a href="#4-判定树说明" class="headerlink" title="(4)判定树说明"></a>(4)判定树说明</h4><p>例子：7    10    13    16    19    29    32    33    37    41    43</p>
+<p>对应的判定树：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408111831739.png"></p>
+<p>说明：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408111949050.png"></p>
+<ul>
+<li>叶节点(方形节点)代表查找不成功的情况，但是注意：其方形节点是虚构的，它不计入比较的次数之中</li>
+</ul>
+<blockquote>
+<p>计算ASL时，查找失败节点不适合放行节点，而是方形节点上层的圆形节点</p>
+</blockquote>
+<ul>
+<li>有序序列有n个元素—&gt;判定树有n个非叶节点和n+1个方形的叶节点</li>
+<li>折半查找关键字的比较次数是和其关键字在判定树中的层数有关的，关键字在判定树的第i层，那么查找成功的比较次数就是i</li>
+</ul>
+<h4 id="5-构建判定树-要会"><a href="#5-构建判定树-要会" class="headerlink" title="(5)构建判定树(要会)"></a>(5)构建判定树(要会)</h4><ul>
+<li><p>构建过程个人感觉就像告诉你先序遍历和中序遍历然后让你确定二叉树</p>
+<blockquote>
+<p>不同的是这里每次需要的根节点不是通过先序遍历告诉你，而是通过low+high然后向下取整计算得到</p>
+<p>扩展：什么样的情况下能确定一颗二叉树呢？</p>
+<p>答案：知道先序遍历和中序遍历，或知道后序遍历和中序遍历，或知道层序遍历和中序遍历</p>
+</blockquote>
+</li>
+</ul>
+<p>(动图).ing—&gt;尽快补上</p>
+<h4 id="6-平均查找长度-重点"><a href="#6-平均查找长度-重点" class="headerlink" title="(6)平均查找长度(重点)"></a>(6)平均查找长度(重点)</h4><p>平均查找长度公式：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408112806958.png"></p>
+<ul>
+<li>失败查找长度也是根据此公式进行计算，不同的是在判定树上的高度和节点而已</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408113505668.png"></p>
+<ul>
+<li>而一般在计算时采用的公式是 </li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222539730.png"></p>
+<blockquote>
+<p>此公式也是计算判定树树高的公式，关于这个，我的理解是：</p>
+<p>使用第一个求和公式能够准确的计算平均查找长度，而这个一般计算公式求得的结果是比实际查找长度要大的，因为向上取整了，比如本来平均查找长度是5.00023，但是在题目中需要的是整数，因此向上取整就成了6,根据题目来</p>
+</blockquote>
+<p>看个题目，这个题目虽然属于分块查找的，但是主要运算的是折半查找</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408122637097.png"></p>
+<h4 id="7-关于折半查找题目"><a href="#7-关于折半查找题目" class="headerlink" title="(7)关于折半查找题目"></a>(7)关于折半查找题目</h4><ul>
+<li><p>很多就是给你一个长度已知的顺序表，然后让你求关键字比较次数或平均查找长度</p>
+</li>
+<li><p>解题最重要的思路就是构建判定树，不一定要全部画出来，但是给你一个元素个数要直到判定树的高度</p>
+<hr>
+</li>
+<li><p>这个题考的是判定树高度公式<img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410102225957.png"></p>
+</li>
+</ul>
+<blockquote>
+<p>选A,记住即可</p>
+</blockquote>
+<ul>
+<li>求关键字比较次数的最值</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410100900235.png"></p>
+<blockquote>
+<p>思路：对于折半查找，关键字、节点数目什么的，第一反应就应该是构建判定树（不要真傻傻的画出来）关键字折半查找的比较次数是和判定树高度相关的的</p>
+<p>求解：顺序表长度16，判定树高度是5，所以关键字最多的比较次数就等于树高5</p>
+</blockquote>
+<ul>
+<li>求平均查找长度</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411084658843.png"></p>
+<blockquote>
+<p>思路：这种题目就需要画出判定树然后进行计算了，</p>
+<p>取有序表元素为0 1 2 3 4 5 6 7 8 9 10 11 </p>
+<p>画出来是这个样子</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411102345123.png"></p>
+<p>查找成功平均查找长度(圆形节点)：判定树的每一层节点数*节点所在高度之和然后除以总个数</p>
+<p>(1* 1 + 2 * 2 + 4 * 3 + 5 * 4)/12=37/12</p>
+<p>查找失败平均查找长度(方型也就是叶子节点)：判定树的每一层节点数*(节点所在高度-1)之和然后除以叶子共个数</p>
+<p>(3 * 3 + 10 * 4)/13 = 49/13</p>
+<p><strong>查找失败平均查找长度中与节点相乘的并不是节点所在高度，而是所在高度-1是因为方形节点在实际上是不存在的，当我们找到方形节点上一层的圆形节点时就已经知道是否查找失败了</strong></p>
+</blockquote>
+<ul>
+<li>判定树</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411084725219.png"></p>
+<blockquote>
+<p>思路：可能，前面知识点讲过，一棵折半查找判定树所有左子树要么全部大于等于右子树节点数，要么全部小于等于。因此选A</p>
+<p>BCD中都同时存在左子树大于右子树节点数，右子树大于左子树节点数的子树</p>
+<p>以D为例，根节点左子树有4个节点，右子树有5个节点，右子树大于左子树</p>
+<p>而根节点的左子树那个节点的左子树有2个节点，右子树有1个节点，左子树大于右子树</p>
+<p>因此不可能成为折半查找判定树</p>
+</blockquote>
+<ul>
+<li>分块查找最值问题(分块问题不多，就与折半查找放到一起了)</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411084825962.png"></p>
+<blockquote>
+<p>思路：最好情况就是分块最理想，每个块中有根号n个元素，同时元素之间都是有序的，索引与块内都可以使用折半查找</p>
+<p>求解：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222616704.png"></p>
+</blockquote>
+<ul>
+<li>折半查找中关键字比较序列</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411084922248.png"></p>
+<blockquote>
+<p>思路:这个题其实问的就是下面选项中那些关键字的序列不能构成二叉排序树的一条查找路径</p>
+</blockquote>
+<h3 id="3-分块查找"><a href="#3-分块查找" class="headerlink" title="3.分块查找"></a>3.分块查找</h3><ul>
+<li><p>概念：又称索引顺序查找</p>
+</li>
+<li><p>特点：既有动态结构又便于快速查找，吸取了顺序查找和折半查找的优点</p>
+</li>
+<li><p>基本思想：将查找表分为若干子块，块内元素可以无序，但块之间必须是有序的(也就是说前一块中的最大关键字必须小于后一块中的最小关键字)，然后就是索引表，索引表中存放的是每个块之中最大的关键字和第一个元素的位置。<strong>索引表中的关键字是有序的</strong></p>
+</li>
+<li><p>算法描述：先索引查找，然后在在块中查找。索引查找采用折半查找，块中查找则可以根据情况采用折半查找或者顺序查找</p>
+</li>
+</ul>
+<h4 id="平均查找长度"><a href="#平均查找长度" class="headerlink" title="平均查找长度"></a>平均查找长度</h4><ul>
+<li>分块查找平均长度一般求的是成功平均查找长度</li>
+<li>由于块内查找和索引查找可以采用顺序查找或者折半查找，因此，平均查找长度计算有所不同，但整体思路是一样的，就是将折半查找和顺序查找的平均查找长度进行组合，公式：</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222650643.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408123130555.png"></p>
+<p><strong>注意：对n个记录的索引顺序表进行分块，最理想的块长是</strong><br>$$<br>\sqrt{n}<br>$$<br><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408131707460.png"></p>
+<ul>
+<li>分块查找因为不同的查找组合会出现不同的平均查找长度，因此就有最理想，最好情况和最坏情况，看例题</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410102950289.png"></p>
+<h2 id="0x03树形结构"><a href="#0x03树形结构" class="headerlink" title="0x03树形结构"></a>0x03树形结构</h2><h3 id="1-二叉排序树-BST"><a href="#1-二叉排序树-BST" class="headerlink" title="1.二叉排序树(BST)"></a>1.二叉排序树(BST)</h3><ul>
+<li><p>也称二叉查找树</p>
+</li>
+<li><p>是一种动态树表，特点是树的结构通常不是一次生成的，而是在查找过程中，当树中不存在关键字等于给定值的节点时进行插入。</p>
+</li>
+<li><p>性质：</p>
+<ul>
+<li>左子树非空则左子树关键字值均不大于(不小于)右子树</li>
+<li>右子树非空则右子树关键字值均不小于(不大于)左子树</li>
+<li>左右子树又各是一颗二叉排序树</li>
+</ul>
+<blockquote>
+<p>很多时候二叉排序树默认是左子树值小于右子树的值，但若有特殊说明则右子树小于左子树也是排序二叉树</p>
+</blockquote>
+</li>
+<li><p>如果对二叉排序树进行<strong>中序遍历</strong>就可以得到一个递增(递减)的有序序列</p>
+</li>
+<li><p>存储结构</p>
+</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">typedef</span> <span class="token keyword">struct</span> BTNode <span class="token punctuation">{</span>
+    <span class="token keyword">int</span> data<span class="token punctuation">;</span>          <span class="token comment" spellcheck="true">// 节点存储的数据，这里代表关键字</span>
+    <span class="token keyword">struct</span> BTNode <span class="token operator">*</span>lchild<span class="token punctuation">;</span>
+    <span class="token keyword">struct</span> BTNode <span class="token operator">*</span>rchild<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="1-二叉排序树的查找"><a href="#1-二叉排序树的查找" class="headerlink" title="(1)二叉排序树的查找"></a>(1)二叉排序树的查找</h4><ul>
+<li><p>基本思想：(默认二叉排序树)并不复杂，从根节点开始进行比较，相等即返回，key值小于根节点关键字，进入左子树，反之进入右子树</p>
+</li>
+<li><p>递归算法</p>
+</li>
+</ul>
+<pre class=" language-c"><code class="language-c">BTNode <span class="token operator">*</span><span class="token function">BSTSearch</span><span class="token punctuation">(</span>BTNode<span class="token operator">*</span> bt<span class="token punctuation">,</span><span class="token keyword">int</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>bt <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>data <span class="token operator">==</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> bt<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>data <span class="token operator">></span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">BSTSearch</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>lchild<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">BSTSearch</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>rchild<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>非递归算法</li>
+</ul>
+<pre class=" language-c"><code class="language-c">BSTNode <span class="token operator">*</span><span class="token function">BST_Search</span><span class="token punctuation">(</span>BiNode T<span class="token punctuation">,</span>ElemType key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">while</span><span class="token punctuation">(</span>T <span class="token operator">!=</span> <span class="token constant">NULL</span> <span class="token operator">&amp;&amp;</span> T<span class="token operator">-></span>data <span class="token operator">!=</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>T<span class="token operator">-></span>data <span class="token operator">></span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            T <span class="token operator">=</span> T<span class="token operator">-></span>lchild<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span>
+            T <span class="token operator">=</span> T<span class="token operator">-></span>rchild<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> T<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<blockquote>
+<p>二叉排序树的查找并不难，难点和重点在于经过二叉排序树扩展过来的二叉平衡树等</p>
+</blockquote>
+<h4 id="2-二叉排序树的插入"><a href="#2-二叉排序树的插入" class="headerlink" title="(2)二叉排序树的插入"></a>(2)二叉排序树的插入</h4><ul>
+<li>插入思路：<ul>
+<li>二叉树为空，直接插入节点</li>
+<li>二叉树非空，则进行查找，插入的前提是查找，找到属于该节点的空位置，然后插入</li>
+</ul>
+</li>
+<li><strong>二叉树插入的关键字一定是存储在新创建的叶子上</strong>、</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">int</span> <span class="token function">BSTInsert</span><span class="token punctuation">(</span>BTNode <span class="token operator">*</span>bt<span class="token punctuation">,</span><span class="token keyword">int</span> key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>bt <span class="token operator">==</span> <span class="token constant">NULL</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   <span class="token comment" spellcheck="true">// 这里也是先找到空节点，然后进行插入</span>
+        bt <span class="token operator">=</span> <span class="token punctuation">(</span>BTNode <span class="token operator">*</span><span class="token punctuation">)</span><span class="token function">malloc</span><span class="token punctuation">(</span><span class="token keyword">sizeof</span><span class="token punctuation">(</span>BTNode<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 因为非空所以先开辟空间</span>
+        bt<span class="token operator">-></span>lchild<span class="token operator">=</span>bt<span class="token operator">-></span>rchild<span class="token operator">=</span><span class="token constant">NULL</span><span class="token punctuation">;</span>
+        bt<span class="token operator">-></span>data <span class="token operator">=</span> key<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>key <span class="token operator">==</span> bt<span class="token operator">-></span>data<span class="token punctuation">)</span>
+            <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//关键字已存在树中，插入失败</span>
+        <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>key <span class="token operator">&lt;</span> bt<span class="token operator">-></span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token function">BSTInsert</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>lchild<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> 
+            <span class="token keyword">return</span> <span class="token function">BSTInsert</span><span class="token punctuation">(</span>bt<span class="token operator">-></span>rchild<span class="token punctuation">,</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="3-二叉排序树的构造"><a href="#3-二叉排序树的构造" class="headerlink" title="(3)二叉排序树的构造"></a>(3)二叉排序树的构造</h4><ul>
+<li>二叉排序树的构造就是将关键字逐个插入到一颗空树中</li>
+</ul>
+<pre class=" language-c"><code class="language-c"><span class="token keyword">void</span> <span class="token function">CreateBST</span><span class="token punctuation">(</span>BSTNode <span class="token operator">*</span>bt<span class="token punctuation">,</span><span class="token keyword">int</span> key<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">int</span> n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    bt <span class="token operator">=</span> <span class="token constant">NULL</span><span class="token punctuation">;</span>  <span class="token comment" spellcheck="true">// 一颗空树或者将树清空</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token function">BSTInsert</span><span class="token punctuation">(</span>bt<span class="token punctuation">,</span>key<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h4 id="4-二叉排序树的删除-略微复杂一点"><a href="#4-二叉排序树的删除-略微复杂一点" class="headerlink" title="(4)二叉排序树的删除(略微复杂一点)"></a>(4)二叉排序树的删除(略微复杂一点)</h4><ul>
+<li><p>二叉排序树的节点删除要稍微复杂一点，因为需要    保证在删除节点后的树仍让是一颗二叉排序树</p>
+<p> 假设删除的是p节点，f节点为其双亲</p>
+</li>
+</ul>
+<ol>
+<li><p>p节点为叶子节点，可以直接删除，删除后不会破坏二叉排序树的特性</p>
+</li>
+<li><p>p节点只有右子树或者左子树，此时将p删除然后用p的子树代替p即可</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408211415493.png"></p>
+</li>
+<li><p>若p节点既有右子树又有左子树，此时令p的直接后继(或直接前驱)替代p,然后将直接后继(或直接前驱)删除即可。<strong>重点在下面</strong></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408211350501.png"></p>
+<blockquote>
+<p>什么？你说我怎么知道哪一个是直接后继或者直接前驱？</p>
+<p>来，首先沿着p节点的右子树的根节点的左指针一直往左走，直到来到最左边的那个节点就是直接后继了，直接前驱就是沿着p节点的左子树的右指针一直往右走，直到来到最右边的那个节点就是直接前驱了，<strong>别看我放在这里，这是重点(敲黑板)</strong></p>
+</blockquote>
+</li>
+</ol>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408211123378.png"></p>
+<h4 id="5-平均查找长度"><a href="#5-平均查找长度" class="headerlink" title="(5)平均查找长度"></a>(5)平均查找长度</h4><blockquote>
+<p>看到这个你想到了什么？                   ———-对对对，就是那个，那个折半查找的判定树</p>
+</blockquote>
+<ul>
+<li><p>需要说明的是二叉排序树和判定树还是有很大区别的，如果此时二叉排序树刚好是一棵二叉平衡树，那么此时平均查找长度和折半查找的判定树是一样的</p>
+</li>
+<li><p>关于不同：二分查找的判定树是唯一的，而二叉排序树是不唯一的，相同关键字因插入顺序可能生成不同的二叉排序树</p>
+<blockquote>
+<p>要问为什么的话？</p>
+<p>因为判定树是根据二分查找生成的，而二分查找的查找集是有序的，要么升序要么降序，然后从中间开始生成，因此生成顺序是唯一的，而对于一个相同元素的集合，二叉排序树的插入顺序可以是随意的，因此生成的二叉树也是不唯一的</p>
+</blockquote>
+</li>
+<li><p>当二叉排序树的平衡因子大于1时，平均查找长度就不一样了，极端情况下，二叉排序树的输入序列是有序的，此时是一颗倾斜的单枝树，平均查找长度就和顺序查找一样了，性能显著变坏(就像下图右边一样)</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408212256495.png"></p>
+<blockquote>
+<p>所以后面才出现了平衡二叉树，平衡二叉树里不会出现这种极端情况，因为其左右子树的高度差是被限制了的。(当人们发现二叉排序树越极端，效率越低时，就在想能不能通过控制二叉排序树的高度来保证二叉排序树的效率，因此平衡二叉树就出现了)</p>
+</blockquote>
+<p>极端情况相关题目：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410105249535.png"></p>
+</li>
+</ul>
+<h4 id="6-二叉排序树相关题目"><a href="#6-二叉排序树相关题目" class="headerlink" title="(6)二叉排序树相关题目"></a>(6)二叉排序树相关题目</h4><ul>
+<li>查找路径(序列)问题</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410105536223.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410105520548.png"></p>
+<ul>
+<li>插入删除相关题目</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410132800780.png"></p>
+<h3 id="2-平衡二叉树"><a href="#2-平衡二叉树" class="headerlink" title="2.平衡二叉树"></a>2.平衡二叉树</h3><h4 id="1-知识点"><a href="#1-知识点" class="headerlink" title="(1)知识点"></a>(1)知识点</h4><ul>
+<li><p>已知平衡二叉树高度求最少节点==已知节点数求最大深度(高度)—&gt;用平衡二叉树递推公式求解</p>
+</li>
+<li><p>以最少节点数构造平衡二叉树的递推公式：(这个公式在解题中很重要)—-&gt;<br>$$<br>N_h=N_{h-1}+N_{h-2}+1\ 如N_0=0，N_1=1;N_2=N_0+N_1+1=2 \其中N_2=2代表构造高度为2的平衡二叉树最少需要2个节点<br>$$</p>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410104859589.png"></p>
+<ul>
+<li><p>所有非叶节点的平衡因子均为1,即平衡二叉树满足平衡的最少节点的情况</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410110112713.png"></p>
+</li>
+</ul>
+<blockquote>
+<p>答案解释在平衡二叉树相关题目模块中</p>
+</blockquote>
+<h4 id="2-概念"><a href="#2-概念" class="headerlink" title="(2)概念"></a>(2)概念</h4><blockquote>
+<p>好了，讲完了二叉排序树，接下来开始平衡二叉树(AVL树)，还记得平均查找长度的英文缩写吗？不记得就上去看(哼~)</p>
+</blockquote>
+<ul>
+<li><p>又称AVL树，(也可简称为平衡树)，是一种特殊的二叉排序树，因此它具有二叉排序树的性质，同时其左右子树都是平衡二叉树</p>
+<blockquote>
+<p>二叉平衡树是排序二叉树的改进</p>
+</blockquote>
+</li>
+<li><p><strong>定义;所有树的左右子树高度之差不超过1</strong>，也就是平衡因子不大于1(只能为-1，0，1)</p>
+<blockquote>
+<p>平衡因子：左子树和右子树的高度之差</p>
+<p>下图中每个节点中的数据就是该树(以该节点为根)的平衡因子</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408213657426.png"></p>
+<h4 id="3-平衡二叉树的插入"><a href="#3-平衡二叉树的插入" class="headerlink" title="(3)平衡二叉树的插入"></a>(3)平衡二叉树的插入</h4><blockquote>
+<p>这个就比较复杂了，复杂的地方在于如果因为插入节点导致树不再平衡就需要进行调整</p>
+<p>那么，如何保证平衡呢？</p>
+</blockquote>
+<ul>
+<li><p>基本思路：当删除或插入导致平衡树的平衡被打破，首先找到插入路径上离插入节点最近的平衡因子大于1的节点p，再对以p节点为根的树进行调整，使之重新达到平衡。调整规律分为(LL,RR,LR,RL)四种情况：</p>
+<blockquote>
+<p>下面的调整描述是王道书上的，如果不好理解建议看一下天勤的描述，较之王道要更通俗一点，这里就不贴出来了</p>
+</blockquote>
+<ol>
+<li><p>LL平衡旋转(右单旋转)</p>
+<p>由于在结点A的左孩子(L)的左子树(L)上插入了新结点，导致<br>A平衡因子由1增至2，以A为根的子树失去平衡，因此需要一次向右旋转操作。</p>
+<p>具体操作过程是将A的左孩子B向右上旋转代替A成为根结点,将A结点向右下旋转成为B的右子树的根结点，而B的原右子树则作为A结点的左子树。<br><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408215900617.png"></p>
+</li>
+<li><p>RR平衡旋转（左单旋转)</p>
+<p>由于在结点A的右孩子(R）的右子树(R）上插入了新结点，A的平衡因子由-1减至-2，导致以A为根的子树失去平衡，需要一次向左的旋转操作。</p>
+<p>具体操作过程是：将A的右孩子B向左上旋转代替A成为根结点，将A结点向左下旋转成为B的左子树的根结点，而B的原左子树则作为A结点的右子树，如图5.29所示。</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408220134381.png"></p>
+</li>
+<li><p>LR平衡旋转（先左后右双旋转)</p>
+<p>由于在A的左孩子(L)的右子树(R)上插入新结点，A的平衡因子由1增至2，导致以A为根的子树失去平衡，需要进行两次旋转操作，先左旋转后右旋转。</p>
+<p>具体操作过程：先将A结点的左孩子B的右子树的根结点C向左上旋转提升到B结点的位置，然后再把该C结点向右上旋转提升到A结点的位置，如图5.30所示。</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408220225724.png"></p>
+</li>
+<li><p>RL平衡旋转（先右后左双旋转)</p>
+<p>由于在A的右孩子(R)的左子树(L)上插入新结点，A的平衡因子由-1减至-2，导致以A为根的子树失去平衡，需要进行两次旋转操作，先右旋转后左旋转。</p>
+<p>具体操作过程：先将A结点的右孩子B的左子树的根结点C向右上旋转提升到B结点的位置，然后再把该C结点向左上旋转提升到A结点的位置，如图5.31所示。</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210408220358727.png"></p>
+</li>
+</ol>
+</li>
+<li><p>在RL和LR平衡旋转中，新节点究竟是插入第二次子树后的左子树还是右子树不影响旋转过程。</p>
+</li>
+<li><p>这里说一下，平衡二叉树的构建和二叉排序树一样就是不断的将节点插入一棵空树，通过调整不断维持其平衡。</p>
+</li>
+<li><p>调整方式的命名：LL，RR，LR，RL并不是对调整过程的描述，而是对不平状态的描述，比如LL是在左子树(L)的左子树(L)上插入节点导致不平衡(调整就是向着反方向调整，因此是右单旋转，向右)，LR是指在其左子树(L)的右子树(R)上插入节点导致不平衡，调整因此是先向左后向右进行两次旋转，RR和RL同理。</p>
+</li>
+</ul>
+<h4 id="4-平均查找长度"><a href="#4-平均查找长度" class="headerlink" title="(4)平均查找长度"></a>(4)平均查找长度</h4><ul>
+<li>和折半查找生成的判定树的平均查找长度是相同的</li>
+</ul>
+<h4 id="5-平衡二叉树相关题目"><a href="#5-平衡二叉树相关题目" class="headerlink" title="(5)平衡二叉树相关题目"></a>(5)平衡二叉树相关题目</h4><ul>
+<li>给定节点求深度最值</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410133310109.png"></p>
+<blockquote>
+<p>思路：已知节点求最大深度—&gt;递推公式<br>$$<br>N_{0}=0 \qquad N_1=1  \qquad N_2=N_0+N_1+1=2<br>\N_3=N_2+N_1=4  \qquad N_4=N_3+N_2+1=7<br>\N_5=N_4+N_3+1=12 \qquad N_6=N_5+N_4+1=20<br>$$<br>从递推公式可以看到20是大于13小于21,因此最大深度为6</p>
+</blockquote>
+<ul>
+<li>给定高度求节点最值</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410133335918.png"></p>
+<blockquote>
+<p>思路：已知高度求最少节点</p>
+<p>根据上面的公式：5层需要至少12个节点</p>
+</blockquote>
+<ul>
+<li>节点总数问题</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410133413041.png"></p>
+<blockquote>
+<p>思路：重点是非叶子节点的平衡因子均为1代表此时平衡二叉树拥有最少的节点，题目就变成了已知高度求最少节点</p>
+<p>根据上面的公式：6层知道需要20个节点</p>
+</blockquote>
+<ul>
+<li>二叉树的构建问题</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410133636308.png"></p>
+<blockquote>
+<p>思路：此题考查的是平衡二叉树的构建，本质是考平衡二叉树插入时的平衡调整</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411164225707.png"></p>
+</blockquote>
+<ul>
+<li>综合选项</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210410133720264.png"></p>
+<blockquote>
+<p>树中最大元素一定无左子树，但可能有右子树，不一定是叶子节点</p>
+</blockquote>
+<ul>
+<li>对插入的理解</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411090156951.png"></p>
+<blockquote>
+<p>答案：A</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411164950927.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411165006000.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411165013020.png"></p>
+<blockquote>
+<p>注意最后一种平衡调整(这里是LR平衡旋转)，先以1为根节点进行左旋，然后以3为节点进行右旋</p>
+</blockquote>
+</blockquote>
+<h3 id="3-B树"><a href="#3-B树" class="headerlink" title="3.B树"></a>3.B树</h3><ul>
+<li><p>B树(B-树)，是一种多路平衡查找树，也是由二叉树变换而来的</p>
+</li>
+<li><p>记住：B树不支持顺序查找(B+树是支持的)</p>
+</li>
+<li><p>B树中所有结点孩子节点个数最大的值称为B树的阶，通常用m表示</p>
+</li>
+<li><p>一棵m阶B树或空树性质：</p>
+<ul>
+<li>每个节点最多有m棵子树，至多含有m-1个关键字</li>
+</ul>
+</li>
+<li><p>若根节点不是终端节点，则至少有两棵子树</p>
+<ul>
+<li>除根节点之外所有非叶节点的子树至少有</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222804811.png"></p>
+</li>
+<li><p>除根节点之外所有非叶节点的关键字至少有</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222817087.png"></p>
+</li>
+</ul>
+<ul>
+<li><p>所有非叶节点结如下：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409083638869.png"></p>
+<blockquote>
+<p>说明，K代表的是节点的关键字，且K1&lt;K2&lt;…Kn;P代表的是指向子树根节点的指针，注意P(i-1)指向的子树中的关键字都是小于Ki</p>
+</blockquote>
+</li>
+<li><p>所有叶节点都出现在同一层次上，并且不带信息(实际上这些节点并不存在，指向这些的节点指针为空)，这些也是查找失败到达的位置</p>
+<blockquote>
+<p>虽然实际上并不存在，逻辑上是被当作存在的，因此说叶子节点的时候指的就是这一层节点</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><p>B树属于平衡m叉查找树，其左右子树的高度差不会超过1</p>
+</li>
+<li><p>B树的关键字树比子树数目要小一，就好像一个正方形，关键字是正方形中的内容，而指向子树的指针就是正方形下面的两个端点</p>
+</li>
+<li><p>如果已经规定或者知道了树是m阶B树，那么即使画出来的树的结构图中节点中没有m-1数目的关键字，其在空间分配中也还是占据了m-1个关键字应该占据的空间。</p>
+</li>
+<li><p><strong>放在前面</strong>(理解)</p>
+<p> B树的插入和删除操作后需要进行分裂和合并的目的是使得被修改节点的关键字数目n满足</p>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222842065.png"></p>
+<h4 id="1-B树的查找"><a href="#1-B树的查找" class="headerlink" title="(1)B树的查找"></a>(1)B树的查找</h4><ul>
+<li>B树的查找是二叉排序树的扩展，二叉排序树是二路查找，B树是多路</li>
+<li>两个基本操作：查找节点和在节点中查找关键字<ul>
+<li>前一个操作时在磁盘上进行的，后一个操作是在内存中进行的(在找到目标节点后将节点信息读入内存，然后采用顺序查找或折半查找)</li>
+</ul>
+</li>
+<li>基本思路：(此处以升序为例)<ul>
+<li>先从根节点开始，相等即结束，关键字A比key大，就顺着关键字A前面的指针进入子树中，关键字A比key小就进入关键字A后面的指针进入子树中，重复上述过程，直到查找成功或者查找到叶节点时就查找失败(对应指针为空指针)。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-B树的插入"><a href="#2-B树的插入" class="headerlink" title="(2)B树的插入"></a>(2)B树的插入</h4><ul>
+<li><p>和所有树的构建一样B树的构建也是在一棵空树上不断插入关键字</p>
+</li>
+<li><p>B树比二叉排序树要稍微复杂一点</p>
+</li>
+</ul>
+<blockquote>
+<p>二叉排序树在找到终端节点后插入即可，而B树则需要做额外的处理以使得插入节点后的树满足B树的定义</p>
+</blockquote>
+<ul>
+<li><p>过程：</p>
+<ul>
+<li><p>1–&gt;定位,首先利用上述的查找算法找出最底层的某个非叶节点(注意插入是插入至叶节点)，如果树中已存在该关键字就无法进行插入，不存在的话会找到查找失败的叶节点，则个时候指向查找失败叶节点的上层节点就是我们需要的非叶节点。</p>
+</li>
+<li><p>2–&gt;插入，插入的时候就需要注意情况了，因为在插入一个关键字后可能该节点的关键字数量会超过每个节点允许的最大关键字数目，因此就需要进行调整。所以，两种情况</p>
+<ul>
+<li><p>第一种就是插入一个关键字后节点的关键字数量不大于B树允许的每个节点的最大关键字数量m，直接插入即可(即找到的节点关键字数目小于m-1)</p>
+</li>
+<li><p>第二种就是进行插入后节点的关键字数大于m-1,这个时候就需要进行分裂</p>
+<p>具体过程：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409094323635.png"></p>
+<p>​    从中间位置[m/2(向上取整)]将节点关键字分为三部分，分别是中间位置的左边，中间位置的那个数，中间位置的右边，然后将中间位置那个关键字添加到父节点中去，如果此时父节点关键字溢出则将父节点进行分裂。</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-B树的删除"><a href="#3-B树的删除" class="headerlink" title="(3)B树的删除"></a>(3)B树的删除</h4><ul>
+<li><p>B树的删除重点就是要掌握在删除最底层非叶节点时的不同情况下的合并操作</p>
+</li>
+<li><p>B树的删除要稍微复杂一点，分为几种处理情况</p>
+<ul>
+<li>关键字k位于最底层非叶节点中时，用k的直接前驱(或直接后继)k2替代k,然后删除k2即可</li>
+</ul>
+<blockquote>
+<p>删除最底层非叶节点就是不断的替换然后转换成删除最最曾非叶节点</p>
+<p>直接前驱看删除关键字前一个指针下指向的节点的最大的关键字，后继看关键字后一个指针指向的节点的最小的关键字</p>
+</blockquote>
+<ul>
+<li><strong>重点：</strong>关键字k位于最底层非叶节点，有三种情况</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409100817398.png"></p>
+</li>
+</ul>
+<h4 id="4-解题知识点"><a href="#4-解题知识点" class="headerlink" title="(4)解题知识点"></a>(4)解题知识点</h4><ul>
+<li><p>根节点为非终端节点时，最少的字节点数和关键书分别为2和1</p>
+</li>
+<li><p>已知B树中的关键字求最大高度和最小高度</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222908051.png"></p>
+<blockquote>
+<p>公式推导不难，不用公式做题也不难，但这样就慢了</p>
+<p>这种思想就是求最小高度，就是每棵树都有最大的孩子m</p>
+<p>最大高度就是根节点有两个孩子节点，其他非叶节点都有m/2向上取整孩子节点数</p>
+</blockquote>
+</li>
+<li><p>具有n个关键字的B树有n+1个叶子节点</p>
+<blockquote>
+<p>B树的叶节点对应的查找失败的情况，对n个关键字的查找集合进行查找，失败可能性有n+1种</p>
+<p>理解的话：给你一批有序的数字，然后让你查找k，找不到无非就是三种情况，1落在了那一批数字中间的间隔之中(比如在5、7中找6，失败的原因就是6落在了5和7中间) 2所有数都大于k 3所有数都小于k</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="5-B树相关问题"><a href="#5-B树相关问题" class="headerlink" title="(5)B树相关问题"></a>(5)B树相关问题</h4><ul>
+<li>关于的B树和B+树，选择题一般考察的就是对B树概念的理解以及节点或者关键字的最值问题</li>
+</ul>
+<blockquote>
+<p>其实关于树最多的计算问题就是知道树的深度求最多或者最少的节点数，知道节点数求树的最大深度或者最小深度</p>
+</blockquote>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411090439362.png"></p>
+<blockquote>
+<p>知识点中有，答案n+1</p>
+</blockquote>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411090447090.png"></p>
+<blockquote>
+<p>思路：给定高度求节点的最值，考的就是对于B树的特性，哪些节点至少和至多拥有的子树数目和关键字的数目</p>
+<p>8—&gt;至少：根节点含有两个子节点，其他非叶节点都含有3/2向上取整为2个节点，所以是一颗完全二叉树，个数为2的5次方-1=31</p>
+<p>至多：所有非叶节点都含有3个子节点，1+3+9+27+81=121(此处是等比数列)，一般求至多需要用到等比求和公式</p>
+<p>9—&gt;至少：此处不再是节点而是关键字，但也是含有最少节点数，本质是一样的</p>
+<p>至少：根节点含有2个子节点，其他非叶节点含有的子节点数为5/2向上取整-1为2，但此处高度只有2，都不需要考虑那么多</p>
+<p>直接算，第一层一个节点，第二层2个节点，2*2+1=5，注意：根节点的关键字数可以为1</p>
+</blockquote>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411090745489.png"></p>
+<blockquote>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222927342.png"></p>
+</blockquote>
+<h3 id="4-B-树"><a href="#4-B-树" class="headerlink" title="4.B+树"></a>4.B+树</h3><p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409101115654.png"></p>
+<ul>
+<li><p>B+树是应数据库所需而生的一种B树的变形树</p>
+</li>
+<li><p>性质：</p>
+<ul>
+<li><p>相同性质</p>
+<ul>
+<li><p>每个分支节点最多有m棵子树(孩子节点)</p>
+</li>
+<li><p>非根叶节点至少有两棵子树</p>
+</li>
+<li><p>除根节点之外所有非叶节点的子树至少有<br>$$<br>\lceil{m/2}\rceil<br>$$</p>
+</li>
+</ul>
+</li>
+<li><p>不同性质：</p>
+<ul>
+<li>节点的子树个数和关键字个数相同</li>
+<li>所有叶节点包含全部关键字及指向其相应记录的指针，叶节点中关键字按有序排列</li>
+<li>所有非叶节点仅起到一个索引的作用，即节点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针，不含有该关键字对应记录的存储地址，而在B-树中，每个关键字对应一个记录的存储地址。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>通常在B+书中有两个头指针，一个指向根节点，另一个指向关键字最小的叶节点</p>
+</li>
+<li><p>B+树的应用方面从这个题的解析中就能了解</p>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411091019571.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411091121576.png"></p>
+<h2 id="0x04散列结构"><a href="#0x04散列结构" class="headerlink" title="0x04散列结构"></a>0x04散列结构</h2><blockquote>
+<p>这一节主要还是将书上的内容内容放上来了，后面还是重点介绍一下题目</p>
+</blockquote>
+<h3 id="1-散列表"><a href="#1-散列表" class="headerlink" title="1.散列表"></a>1.散列表</h3><ul>
+<li>记录在表中的位置和关键字之间存在着确定的关系</li>
+</ul>
+<p><strong>敲黑板：对于考研这一部分要求记住一句话—根据给定的关键字计算出关键字在表中的位置</strong></p>
+<h4 id="1-概念介绍"><a href="#1-概念介绍" class="headerlink" title="(1)概念介绍"></a>(1)概念介绍</h4><ul>
+<li>散列表:根据关键字进行直接访问的数据结构</li>
+</ul>
+<blockquote>
+<p>散列表建立了关键字和存储地址之间的一种映射关系</p>
+</blockquote>
+<ul>
+<li><p>散列函数：把查找表中关键字映射成该关键字对应地址的函数，(这里的地址可以是数组下标、索引或内存地址等)记为<br>$$<br>Hash(key)=Addr<br>$$</p>
+</li>
+<li><p>冲突：散列函数将两个或两个以上的不同关键字映射到同一地址上</p>
+</li>
+<li><p>同义词：发生碰撞(冲突)的不同关键字之间称为同义词</p>
+</li>
+</ul>
+<h4 id="2-散列表的建立"><a href="#2-散列表的建立" class="headerlink" title="(2)散列表的建立"></a>(2)散列表的建立</h4><ul>
+<li>散列表的建立分为两部分，首先是通过散列函数将关键字插入表中，然后如果产生冲突就进行冲突处理，然后将数据插入其中</li>
+</ul>
+<p>下面实际中常用的散列函数：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409232511275.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409232354941.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409232440046.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409232541603.png"></p>
+<ul>
+<li>一个好的散列函数应该尽可能的避免产生冲突，但是任何散列函数都会产生冲突，我们所能做的就是尽量降低产生冲突的可能性。</li>
+</ul>
+<p>处理冲突的方法：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409233749636.png"></p>
+<ul>
+<li>取定某一增量序列后，对应的处理方法就是确定的，一般有下面四种取法：</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409233732924.png"></p>
+<ul>
+<li><p>在采用开放定址的情形下，删除元素只能进行逻辑删除，就是在想要删除的元素位置做一个删除标记,不能进行物理删除。</p>
+<blockquote>
+<p>因为若进行物理删除元素就会截断其他具有相同散列地址元素的查找地址。这样做的副作用就是进行多次删除之后，表面上看散列表很满，实际上有许多位置未利用，因此需要定期维护散列表，将删除标记的元素进行物理删除。</p>
+</blockquote>
+</li>
+<li><p>另一种冲突处理方法：</p>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409235202044.png"></p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210409235216596.png" alt="image-20210409235216596"></p>
+<h4 id="3-散列表的查找"><a href="#3-散列表的查找" class="headerlink" title="(3)散列表的查找"></a>(3)散列表的查找</h4><ul>
+<li>散列表的查找与构造基本一致<ul>
+<li>首先根据散列函数查找关键字对应地址是否有记录，若无记录则查找失败，有记录则进行比较，若相等就返回查找成功标志，失败则执行接下来的步骤</li>
+<li>用给定的冲突处理方法计算“下一个散列地址”</li>
+</ul>
+</li>
+<li>散列表的查找效率取决于三个因素：散列函数，冲突处理的方法和装填因子</li>
+<li>散列表的平均查找长度依赖于散列表的装填因子，而不依赖于散列表的长度m和表中记录数n</li>
+</ul>
+<h4 id="4-平均查找长度-1"><a href="#4-平均查找长度-1" class="headerlink" title="(4)平均查找长度"></a>(4)平均查找长度</h4><ul>
+<li><p>平均查找长度会因为散列函数和冲突处理的不同而不同</p>
+<ul>
+<li><p>下面的例子：散列函数–H(key)=key%13 冲突处理–线性探测</p>
+<p>散列表</p>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411092653392.png"></p>
+<p>​        查找成功关键字比较次数：</p>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411092702935.png"></p>
+<blockquote>
+<p>计算方法：首先14%13=1(地址),而1地址存放的刚好就是14，因此比较次数为1</p>
+<p>01%13=1(地址),1地址存放的是14，发生冲突因此采用线性探测(从2位置从前往后查找)继续查找，发现第二个位置是01，因此比较次数为2</p>
+<p>看27%13=1(地址)，1地址存放的非27，开始使用冲突处理继续查找，依次往后找，发现在第四个位置，从前往后依次比较过1，2，3，4，比较次数为4</p>
+<p>依次类推</p>
+</blockquote>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411093230844.png"></p>
+<ul>
+<li>至于查找失败平均查找长度：在后续题目中会进行讲解(emmmm，主要是不晓得咋个说)</li>
+<li>散列查找的平均查找长度的计算有些细节东西是需要注意的，不然很容易出错，具体看最后的题目</li>
+</ul>
+<h4 id="5-其他"><a href="#5-其他" class="headerlink" title="(5)其他"></a>(5)其他</h4><ul>
+<li><p>散列表的装填因子(定义为一个表的装满程度)：</p>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411222945839.png"></p>
+<ul>
+<li>装填因子越大，发生冲突的可能性越大。</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-散列表相关题目"><a href="#6-散列表相关题目" class="headerlink" title="(6)散列表相关题目"></a>(6)散列表相关题目</h4><p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411093924301.png"></p>
+<blockquote>
+<p>这里答案是D，但我还是觉得是(K-1)K/2,因为第一个是没有发生冲突的，也就是说进行线性探测的只有K-1个数</p>
+</blockquote>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411093935185.png"></p>
+<blockquote>
+<p>这种题就是比较简单的了，依次将关键字带入散列函数然后看结果为1的个数即可，有4个</p>
+</blockquote>
+<p><img src="./medias/rem.gif" data-original="https://gitee.com/RemMeiko/img-bed/raw/master/DataStructure/image-20210411093943303.png"></p>
+<blockquote>
+<p>会借着这个题目详细记录一下散列查找的平均查找长度的计算</p>
+<p>首先拿到题目先将散列表画出来，先将所有关键字带入散列函数中得到</p>
+<table>
+<thead>
+<tr>
+<th>关键字</th>
+<th>87</th>
+<th>40</th>
+<th>30</th>
+<th>6</th>
+<th>11</th>
+<th>22</th>
+<th>98</th>
+<th>20</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>散列计算</td>
+<td>3</td>
+<td>5</td>
+<td>2</td>
+<td>6</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+<td>6</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>计算过后发现只有6和20发生了冲突，因为6计算在前，因此对20进行冲突处理得到最终的散列地址</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>散列地址</th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>关键字</td>
+<td>98</td>
+<td>22</td>
+<td>30</td>
+<td>87</td>
+<td>11</td>
+<td>40</td>
+<td>6</td>
+<td>20</td>
+<td>NULL</td>
+</tr>
+</tbody></table>
+<p>每个关键字的查找失败长度就是从该关键字的散列地址出发依次往后对比(数),直到找到为空结束</p>
+<p>以关键字98为例，依次往后找，空的散列地址是8，那么一共比较了9次（0~8）</p>
+<p>其他依次类推，散列地址从0<del>8的关键字对应比较的是 (9</del>3次) 然后将所有关键字的查找失败的查找长度相加除以m即可，这里的m是7并不是表长8</p>
+<p>最后结果就是:(9+8+7+6+5+4+3)/7=6</p>
+<p><strong>需要注意的是：</strong>你只能将从0-6地址的关键字的比较次数加起来然后除以7，第7个地址的关键字没有算进来的</p>
+<p>这里很容易出错，很多人都以为是除以表长，其实不然，因为你的散列函数中模长是小于表长的，对于超过模长的关键字比如散列地址为7的关键字散列函数是找不到的</p>
+<ul>
+<li>总结一下：平均查找长度的计算是如果模长小于表长，是只算到模长的</li>
+</ul>
+</blockquote>
+<ul>
+<li>说一下线性探测再散列就是线性探测法</li>
+</ul>
+<blockquote>
+<p>因为王道书上的开放定址法有四种，其中第三个的名字叫再散列法，搞得我以为线性探测再散列法是先线性探测再进行再散列法</p>
+<p>然后发现数据结构教材上开放定址法只写了三个，分别是线性探测再散列，二次探测再散列，伪随机探测再散列，是没有的再散列法的，不过有个再哈希法，这个再哈希法和王道书上的再散列法是不一样的，()这个哈希法采用的是另一种哈希函数)而且不属于开放定址法</p>
+</blockquote>
+<hr>
+<h1 id="一些无关的话题"><a href="#一些无关的话题" class="headerlink" title="一些无关的话题"></a>一些无关的话题</h1><blockquote>
+<p>个人认为最好的学习状态是以实际应用或考试为驱动的学习</p>
+</blockquote>
+<blockquote>
+<p>算法最核心的就是思想，其次就是数据结构，不同的数据结构搭配上算法组成各种各样的程序</p>
+</blockquote>
+<blockquote>
+<p>蓦然回首 ，发现废物竟只剩我自己(心态有点小崩)</p>
+</blockquote>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">RemMeiko</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://RemMeiko.buzz/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%9F%A5%E6%89%BE/">http://RemMeiko.buzz/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%9F%A5%E6%89%BE/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">RemMeiko</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%EF%BC%8C%E8%80%83%E7%A0%94/">
+                                    <span class="chip bg-color">数据结构，查找算法，考研</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="./medias/rem.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="./medias/rem.gif" data-original="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments textarea {
+        box-sizing: border-box;
+        background: url("/medias/comment_bg.png") 100% 100% no-repeat;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #4cbf30;
+        font-weight: 500;
+        text-decoration: none;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="vcomments" class="card-content" style="display: grid">
+    </div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: 'aRQzXxYwMqwvGim7VmKLYJHH-9Nh9j0Va',
+        appKey: 'uSfVIBC9FpcBOudIWu5wpiuC',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: 'just go go 阿 西 吧 ^_^'
+    });
+</script>
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%9F%A5%E6%89%BE/">
+                    <div class="card-image">
+                        
+                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/wallhaven-72pe8v_1920x1080.png" class="responsive-img" alt="数据结构之查找算法">
+                        
+                        <span class="card-title">数据结构之查找算法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%EF%BC%8C%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">数据结构，查找算法，考研</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8/">
+                    <div class="card-image">
+                        
+                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/10.png" class="responsive-img" alt="云边有个小卖部">
+                        
+                        <span class="card-title">云边有个小卖部</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-15
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%84%9F%E6%82%9F/" class="post-category">
+                                    感悟
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
+                        <span class="chip bg-color">记录</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%84%9F%E6%82%9F/">
+                        <span class="chip bg-color">感悟</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('2'),
+            headingSelector: 'h2, h3, h4, h5'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4, h5').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<footer class="page-footer bg-color">
+    
+   
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            <!--随机英文句子
+            <span id="rainbow" href=''>🌈 获取中...</span>
+            <script>
+            fetch('https://api.eatrice.top')
+            .then(response => response.json())
+            .then(data => {
+            var rainbow = document.getElementById('rainbow');
+            rainbow.innerHTML = data.Content;
+            rainbow.href = "https://rainbow.eatrice.top/?ID=" + data.ID;
+            })
+            .catch(console.error)
+            </script>
+            -->
+            <span id="busuanzi_container_site_uv">
+                <i class="fa fa-users"></i>
+                次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+
+            <a href="/about" target="_blank">Rem Meiko</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            <span id="sitetime"></span>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">23.6k</span>&nbsp;字
+            
+            
+            
+            
+            
+            <br> 
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/RemMeiko" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:3132756780@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=3132756780" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 3132756780" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+ 
+    <a href="https://space.bilibili.com/391381675" class="tooltipped" target="_blank" data-tooltip="我的B站 " data-position="top" data-delay="50"> 
+        <i class="fas fa-play-circle"></i> 
+    </a> 
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!--英文句子API-->
+<script language=javascript>
+    function rainbow() {
+        fetch('https://api.eatrice.top')
+        .then(response => response.json())
+        .then(data => {
+        var rainbow = document.getElementById('rainbow');
+        rainbow.innerHTML = data.Content;
+        rainbow.href = "https://rainbow.eatrice.top/?ID=" + data.ID;
+        })
+        .catch(console.error)
+    }
+</script>
+    
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2020, 08, 02, 00, 00, 00); //北京时间2020-08-02 14:25:50
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        if (diffYears == "0") {
+            document.getElementById("sitetime").innerHTML = "本站已运行 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        } else {
+            document.getElementById("sitetime").innerHTML = "本站已运行 " +diffYears+" 年 "+diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+        }
+        
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?cf87bab0f4aadd1f63b825593d7b8db4";
+      var s = document.getElementsByTagName("script")[0]; 
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+    
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+    <!-- 樱花特效 -->
+    
+        <script type="text/javascript" src=""></script>
+        
+
+    <!-- 星星跟随-->
+    
+    <script type="text/javascript" src="/libs/others/follow.js"></script>
+    
+
+    <!-- 下处的鱼-->
+    
+    <script type="text/javascript" src="/libs/others/fish.js"></script>
+    
+
+     <!-- 星星跟随-->
+     
+        <script type="text/javascript" src="/libs/others/lihua.js"></script>
+    
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) }) </script>
+    <!--鼠标点击烟花绽放特效  目录/source/js/self/fireworks--><!--
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;" ></canvas> 
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+    <script type="text/javascript" src="/js/self/fireworks.js"></script>
+    -->
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"left","width":150,"height":350},"mobile":{"show":false},"log":false,"tagMode":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=i;var e=n.imageLazyLoadSetting.isSPA,r=(n.imageLazyLoadSetting.preloadRatio,Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));function i(){e&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,a=0;a<r.length;a++)0<=(t=(t=r[a]).getBoundingClientRect()).bottom&&0<=t.left&&t.top<=(n.innerHeight+240||document.documentElement.clientHeight+240)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},t.src!==i&&(n.src=i)}()}i(),n.addEventListener("scroll",function(){var t,e;t=i,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><!-- hexo-inject:begin --><!-- hexo-inject:end --></body>
+
+</html>

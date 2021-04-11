@@ -5,3 +5,12 @@
 :active{
     cursor: url("/medias/cursor/2.ico"),auto!important;
 }
+
+@font-face{
+    font-family: 'myFont';
+    src: url('../font/STZHONGS.TTF');
+}
+
+body{
+    font-family: 'myFont';
+}
