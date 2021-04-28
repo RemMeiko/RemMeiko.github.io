@@ -5,7 +5,7 @@
 
 <head>
     <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
-    <meta name="keywords" content="关于我遇见过的那些句子, 技术宅改变世界">
+    <meta name="keywords" content="图片小爬虫, 技术宅改变世界">
     <meta name="description" content="技术宅改变世界">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>关于我遇见过的那些句子 | RemMeiko</title>
+    <title>图片小爬虫 | RemMeiko</title>
     <link rel="stylesheet" href="/css/highlight/styles/vs2015.css">
 
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -572,7 +572,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = 'd7b6a14a8edf71b3874348a861fe20cd03b01e127886e3b290c5203c56def3b7';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -585,12 +585,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://remmeiko.gitee.io/img-bed/anime/8.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://remmeiko.gitee.io/img-bed/anime/11.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">关于我遇见过的那些句子</h1>
+                    <h1 class="description center-align post-title">图片小爬虫</h1>
                 </div>
             </div>
         </div>
@@ -709,12 +709,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                                <span class="chip bg-color">读书</span>
+                            <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                <span class="chip bg-color">爬虫</span>
                             </a>
                         
-                            <a href="/tags/%E5%8F%A5%E5%AD%90/">
-                                <span class="chip bg-color">句子</span>
+                            <a href="/tags/java/">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%B4%AA%E7%8E%A9/">
+                                <span class="chip bg-color">贪玩</span>
                             </a>
                         
                     </div>
@@ -725,8 +729,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E8%AF%BB%E4%B9%A6/" class="post-category">
-                                读书
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                爬虫
                             </a>
                         
                     </div>
@@ -738,28 +742,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-03-15
+                    2021-04-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-12
+                    2021-04-29
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    210
+                    1.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -780,16 +784,242 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <blockquote>
-<p><strong>待她再次送我出门的时候，她说：“出去活动活动，去地坛看看书，我说这挺好。”许多年以后我才渐渐听出，母亲这话实际上是自我安慰，是暗自的祷告，是给我的提示，是恳求与嘱咐。</strong></p>
+<p>申明：以下爬虫只是作为学习技术记录，其目的只是了解相关技术，并未将其作为工具进行使用</p>
 </blockquote>
 <blockquote>
-<p><strong>瀑布的水逆流而上，蒲公英种子从远处飘回，聚成伞的模样</strong><br><strong>太阳从西边升起，落向东方。</strong><br><strong>子弹退回枪膛，运动员回到起跑线上</strong><br><strong>我交回录取通知书，忘了十年寒窗。</strong><br><strong>厨房里飘来饭菜的香，你把我的卷子签好名字，关掉电视，帮我把书包背上。</strong><br><strong>你还在我身旁</strong></p>
+<p>引言：这些爬虫只是单纯的通过图片链接进行爬取，因此这些图片都是经过处理过的，图片一般很小，像素点和清晰度都是我不能接受的，因此对于图片，在下一般是通过提供下载功能的图片网站进行收集，遇到喜欢的随手下一下。</p>
+<p>因为以前写过一点点，因此这份小代码就直接搬运了以前的代码进行了修改，花费的时间不多。</p>
 </blockquote>
 <blockquote>
-<p><strong>—《我与地坛》史铁生</strong></p>
+<p>这些代码还有很多地方可以完善，同时有很多东西是可以深入学习的，比如jsoup的selector，css选择器，java中Map,Map的升级，集合等等，以及模块化编程，代码优化，算法思考等等，都说略懂皮毛，一想到这些就知道连皮都还没懂</p>
 </blockquote>
-<p>​                                                                </p>
-<h1 id="remmeiko的小屋，不求流芳千古，只求安守一份宁静。"><a href="#remmeiko的小屋，不求流芳千古，只求安守一份宁静。" class="headerlink" title="remmeiko的小屋，不求流芳千古，只求安守一份宁静。"></a>remmeiko的小屋，不求流芳千古，只求安守一份宁静。</h1><h2 id="追逐朝阳的少年终究爱上了夕阳。"><a href="#追逐朝阳的少年终究爱上了夕阳。" class="headerlink" title="追逐朝阳的少年终究爱上了夕阳。"></a>追逐朝阳的少年终究爱上了夕阳。</h2><h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+<h2 id="唯美女生网站"><a href="#唯美女生网站" class="headerlink" title="唯美女生网站"></a>唯美女生网站</h2><ul>
+<li>网址：<a target="_blank" rel="noopener" href="https://www.wmgirl.com/">https://www.wmgirl.com/</a></li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/crawler/image-20210428212817044.png" alt="唯美女生"></p>
+<ul>
+<li><p>主要代码</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">,</span> InterruptedException <span class="token punctuation">{</span>
+        Document pagedocu <span class="token operator">=</span> <span class="token function">requestDoc</span><span class="token punctuation">(</span><span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"https://www.wmgirl.com/"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// Classification-->分类</span>
+        Elements Classifications1 <span class="token operator">=</span> pagedocu<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">".nav.navbar-nav.fright.nav-cate-pc.navbar-nav-box>li"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Elements Classifications2 <span class="token operator">=</span> pagedocu<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">".row>.col-md-2"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        LinkedHashMap<span class="token operator">&lt;</span>String<span class="token punctuation">,</span>String<span class="token operator">></span> ClassificationMap <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">LinkedHashMap</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 获取小姐姐分类 添加至Map字典之中</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Element Classification<span class="token operator">:</span>Classifications1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ClassificationMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>Classification<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>Classification<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>Element Classification<span class="token operator">:</span>Classifications2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            ClassificationMap<span class="token punctuation">.</span><span class="token function">put</span><span class="token punctuation">(</span>Classification<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>Classification<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment" spellcheck="true">// 从字典中去除无关选项</span>
+        ClassificationMap<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"首页"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ClassificationMap<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"关于"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ClassificationMap<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"浏览历史"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ClassificationMap<span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token string">"周杰伦新歌"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// System.out.println(ClassificationMap);</span>
+        <span class="token comment" spellcheck="true">// 选择下载的类型</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> TypeData <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>String key<span class="token operator">:</span>ClassificationMap<span class="token punctuation">.</span><span class="token function">keySet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            i<span class="token operator">++</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"类型"</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">": "</span><span class="token operator">+</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            TypeData<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>ClassificationMap<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"请选择小姐姐类型(输入标号)："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Scanner in <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span>in<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> choice <span class="token operator">=</span> in<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 访问类型对应的网址</span>
+        String ClassificationUrl <span class="token operator">=</span> <span class="token string">"https://www.wmgirl.com"</span><span class="token operator">+</span>TypeData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>choice<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">//System.out.println(ClassificationUrl);</span>
+        pagedocu <span class="token operator">=</span> <span class="token function">requestDoc</span><span class="token punctuation">(</span><span class="token function">request</span><span class="token punctuation">(</span>ClassificationUrl<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 提取网址中的每一组小姐姐对应的网址</span>
+        Elements GroupUrls <span class="token operator">=</span> pagedocu<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">".waterfall.waterfall .item"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> GroupUrlsList <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 得到每组图片的标题图片的Url</span>
+        <span class="token comment" spellcheck="true">/*for(Element PictureUrl :PictureUrls) {
+            Urls.add(PictureUrl.select(".item-content.tab-content a img").attr("src"));
+        }*/</span>
+        ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> GroupUrlsList2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>Element GroupUrl<span class="token operator">:</span>GroupUrls<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            GroupUrlsList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>GroupUrl<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">".item-content.tab-content a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> j <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>String data <span class="token operator">:</span> GroupUrlsList<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            String GroupUrl <span class="token operator">=</span> <span class="token string">"https://www.wmgirl.com"</span><span class="token operator">+</span>data<span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请求目标主页Url:"</span><span class="token operator">+</span>GroupUrl<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            pagedocu <span class="token operator">=</span> <span class="token function">requestDoc</span><span class="token punctuation">(</span><span class="token function">request</span><span class="token punctuation">(</span>GroupUrl<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">// 获取最终图片下载地址</span>
+            Elements FinalUrls <span class="token operator">=</span> pagedocu<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">".picbox>div"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> FinalUrlsList <span class="token operator">=</span>  <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第"</span><span class="token operator">+</span><span class="token punctuation">(</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"组图片："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">int</span> numflag <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span>Element FinalUrl <span class="token operator">:</span> FinalUrls<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                FinalUrlsList<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>FinalUrl<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"src"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"下载的第"</span><span class="token operator">+</span>numflag<span class="token operator">+</span><span class="token string">"张图片网址："</span><span class="token operator">+</span>FinalUrl<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"img"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"src"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                numflag<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            j<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//下载</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"--------------------------------------------------------------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"开始下载....."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">Download</span><span class="token punctuation">(</span>FinalUrlsList<span class="token punctuation">,</span>TypeData<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>choice<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span>j<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"--------------------------------------------------------------------------------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre>
+</li>
+<li><p>演示画面</p>
+<blockquote>
+<p>JDK环境：jdk-14</p>
+<ul>
+<li>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/17878POrKEYydtp5AzT31ww">https://pan.baidu.com/s/17878POrKEYydtp5AzT31ww</a><br>提取码：1245 </li>
+</ul>
+<p>JDK1.8环境可能无法运行，可以下载上面的jdk-14然后修改环境变量</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/crawler/image-20210428213227425.png" alt="image-20210428213227425"></p>
+<ul>
+<li><p>代码存在的问题(有时间的可以自己改一下)</p>
+<ul>
+<li>1）未设置代理ip和代理池—&gt;因此采用了延时爬取，每一次爬取过后会停止十秒左右</li>
+<li>2）下载的图片是被处理过的</li>
+<li>3）对于爬虫异常未作处理，健壮性弱</li>
+<li><ol start="4">
+<li>  代码是怎么方便怎么来，菜鸡鸡中鸡水平，图一乐呵</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>测试爬取结果(注意图片大小)</p>
+<p><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/crawler/image-20210428214841591.png" alt="image-20210428214841591"></p>
+</li>
+<li><p>百度云盘</p>
+<blockquote>
+<p>已经打包成jar文件，可以下载jar文件查看完整代码，其中使用到的jar依赖包也可以看到</p>
+</blockquote>
+<ul>
+<li>链接：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1-E8oyDKPttuX7bifh1VhhA">https://pan.baidu.com/s/1-E8oyDKPttuX7bifh1VhhA</a>     提取码：1234 </li>
+<li>运行：安装java环境后，打开cmd，输入命令即可<ul>
+<li>java -jar .\wmGirls.jar</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="必应壁纸"><a href="#必应壁纸" class="headerlink" title="必应壁纸"></a>必应壁纸</h2><blockquote>
+<p>这份代码和上面是一样的，准确来讲上面的代码是将下面的代码改了一下，下面的代码要更早一点面世</p>
+<p>必应壁纸是提供了下载功能的，所以如果是学习的话采用上面的代码学习即可，感谢必应作者(攻城狮小哥一枚)为我们提供的必应壁纸，下面的代码仅仅学习使用，不用做爬取工具。</p>
+</blockquote>
+<ul>
+<li>网址:<a target="_blank" rel="noopener" href="https://bing.ioliu.cn/">https://bing.ioliu.cn</a></li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/crawler/image-20210429004444571.png" alt="image-20210429004444571"></p>
+<ul>
+<li>部分代码</li>
+</ul>
+<pre class=" language-java"><code class="language-java">        String StrUrl <span class="token operator">=</span> <span class="token string">"https://bing.ioliu.cn"</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> startNum<span class="token punctuation">;</span> i <span class="token operator">&lt;</span> startNum <span class="token operator">+</span> NumNum<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">//请求主页时候挂起5s</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"正在请求主页中...."</span> <span class="token operator">+</span> <span class="token string">"请等待5s"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            HttpEntity PageHome <span class="token operator">=</span> <span class="token function">request</span><span class="token punctuation">(</span><span class="token string">"https://bing.ioliu.cn/?p="</span> <span class="token operator">+</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请求成功,接下来开始下载这一页图片..."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//请求的html文档</span>
+            String Pagehtml <span class="token operator">=</span> EntityUtils<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>PageHome<span class="token punctuation">,</span> <span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Document pagedocu <span class="token operator">=</span> Jsoup<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>Pagehtml<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">//拿取请求页面的图片相关数量信息</span>
+            String Numdiv <span class="token operator">=</span> pagedocu<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">".page span"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">first</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//结果是1 / 133 字符串</span>
+            String<span class="token punctuation">[</span><span class="token punctuation">]</span> num <span class="token operator">=</span> Numdiv<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">" "</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//以空格分割成字符串数组</span>
+
+            <span class="token comment" spellcheck="true">//拿取图片的相关其他信息存储在数组Names中</span>
+            ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> Names <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            Elements Namedivs <span class="token operator">=</span> pagedocu<span class="token punctuation">.</span><span class="token function">getElementsByClass</span><span class="token punctuation">(</span><span class="token string">"description"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>Element Namediv <span class="token operator">:</span> Namedivs<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                String name <span class="token operator">=</span> Namediv<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"h3"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">text</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                String<span class="token punctuation">[</span><span class="token punctuation">]</span> Name <span class="token operator">=</span> name<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"\\("</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Names<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>Name<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">//设置动态数组存储url</span>
+            ArrayList<span class="token operator">&lt;</span>String<span class="token operator">></span> Urls <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//获取url所在的所有列表</span>
+            Elements containers <span class="token operator">=</span> pagedocu<span class="token punctuation">.</span><span class="token function">getElementsByClass</span><span class="token punctuation">(</span><span class="token string">"item"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>Element container <span class="token operator">:</span> containers<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                Elements item <span class="token operator">=</span> container<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">".card.progressive"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                Urls<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span><span class="token function">select</span><span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">attr</span><span class="token punctuation">(</span><span class="token string">"href"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">//写入文件中 //父路径</span>
+            File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span><span class="token string">"C:\\Users\\31327\\Desktop"</span><span class="token punctuation">,</span> <span class="token string">"必应壁纸"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//判断文件夹是否存在</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                file<span class="token punctuation">.</span><span class="token function">mkdir</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">int</span> cnt <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span> <span class="token punctuation">(</span>String str <span class="token operator">:</span> Urls<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 <span class="token comment" spellcheck="true">//url中需要替换的目标字符串</span>
+                String strobeNam <span class="token operator">=</span> <span class="token string">"home_"</span> <span class="token operator">+</span> i<span class="token punctuation">;</span>
+                str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span>strobeNam<span class="token punctuation">,</span> <span class="token string">"download"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"图片网址是:"</span> <span class="token operator">+</span> StrUrl <span class="token operator">+</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                <span class="token comment" spellcheck="true">//文件子路径</span>
+                String ChildFile <span class="token operator">=</span> i <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> cnt <span class="token operator">+</span> <span class="token string">"("</span> <span class="token operator">+</span> num<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">")-"</span> <span class="token operator">+</span> Names<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>cnt <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">".jpg"</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//时间间隔</span>
+                <span class="token keyword">int</span> time <span class="token operator">=</span> <span class="token function">ran</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                File Fileuser <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>file<span class="token punctuation">,</span> ChildFile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment" spellcheck="true">//判断图片是否存在</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>Fileuser<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                    <span class="token comment" spellcheck="true">//第一种请求 Httpclient请求</span>
+                    HttpEntity httpEntity1 <span class="token operator">=</span> <span class="token function">request</span><span class="token punctuation">(</span>StrUrl <span class="token operator">+</span> str<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token comment" spellcheck="true">//写入文件夹</span>
+                    InputStream in <span class="token operator">=</span> httpEntity1<span class="token punctuation">.</span><span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    FileUtils<span class="token punctuation">.</span><span class="token function">copyInputStreamToFile</span><span class="token punctuation">(</span>in<span class="token punctuation">,</span> Fileuser<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+                    <span class="token comment" spellcheck="true">//打印下载信息</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第"</span> <span class="token operator">+</span> num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span><span class="token string">"页"</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">"-"</span><span class="token operator">+</span>cnt<span class="token operator">+</span><span class="token string">"下载成功，总计有"</span> <span class="token operator">+</span>num<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"页,下次时间间隔是"</span> <span class="token operator">+</span> time <span class="token operator">+</span> <span class="token string">"s"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token function">sleep</span><span class="token punctuation">(</span>time <span class="token operator">*</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"第"</span> <span class="token operator">+</span> num<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token string">"页"</span> <span class="token operator">+</span> i <span class="token operator">+</span> <span class="token string">"-"</span> <span class="token operator">+</span> cnt <span class="token operator">+</span> <span class="token string">"张图片已存在"</span><span class="token comment" spellcheck="true">/*+",本次时间间隔是"+(time*1000)*/</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                cnt<span class="token operator">++</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"下载完成!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<ul>
+<li>测试结果</li>
+</ul>
+<p><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/crawler/image-20210429004258127.png" alt="image-20210429004258127"></p>
+<ul>
+<li>附：jar文件我就不公布了，代码差不多已经全部放出来了。</li>
+</ul>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ul>
+<li>另外推荐几个壁纸网站</li>
+</ul>
+<blockquote>
+<p>别问，问就是没爬过，只是简单测试过，</p>
+</blockquote>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.quanjing.com/">全景壁纸</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://wallhaven.cc/">我最常逛的壁纸网站</a></p>
+</li>
+<li><p>知乎</p>
+<ul>
+<li>知乎的话，要复杂一点，但是也更好玩一点</li>
+<li>需要携带cookies，同时直接使用网址是无法拿到图片的，必须去js文件里面结合网页源代码然后进行处理才能拿到图片网址</li>
+<li>好玩的点就在于知乎的每一篇回答的网址都只有一串数字不同，因此写完一个爬虫后，可以弄出来一个模板，当需要访问哪篇回答里的图片时只需要将那串数字输入即可</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>代码不发出来了，和上面整体思路是一样的。</p>
+</blockquote>
+
                 
             </div>
             <hr/>
@@ -805,7 +1035,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Rem Meiko</a>
+                    <a href="/about" rel="external nofollow noreferrer">RemMeiko</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -815,7 +1045,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://remmeiko.github.io/%E5%85%B3%E4%BA%8E%E6%88%91%E9%81%87%E8%A7%81%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/">http://remmeiko.github.io/%E5%85%B3%E4%BA%8E%E6%88%91%E9%81%87%E8%A7%81%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E5%8F%A5%E5%AD%90/</a>
+                    <a href="http://remmeiko.github.io/%E5%B0%8F%E7%88%AC%E8%99%AB/">http://remmeiko.github.io/%E5%B0%8F%E7%88%AC%E8%99%AB/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -828,7 +1058,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Rem Meiko</a>
+                    <a href="/about" target="_blank">RemMeiko</a>
                     !
                 </span>
             </div>
@@ -853,12 +1083,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%AF%BB%E4%B9%A6/">
-                                    <span class="chip bg-color">读书</span>
+                                <a href="/tags/%E7%88%AC%E8%99%AB/">
+                                    <span class="chip bg-color">爬虫</span>
                                 </a>
                             
-                                <a href="/tags/%E5%8F%A5%E5%AD%90/">
-                                    <span class="chip bg-color">句子</span>
+                                <a href="/tags/java/">
+                                    <span class="chip bg-color">java</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%B4%AA%E7%8E%A9/">
+                                    <span class="chip bg-color">贪玩</span>
                                 </a>
                             
                         </div>
@@ -1291,16 +1525,17 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/%E4%BA%91%E8%BE%B9%E6%9C%89%E4%B8%AA%E5%B0%8F%E5%8D%96%E9%83%A8/">
+                <a href="/%E5%B0%8F%E7%88%AC%E8%99%AB/">
                     <div class="card-image">
                         
-                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/10.png" class="responsive-img" alt="云边有个小卖部">
+                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/11.png" class="responsive-img" alt="图片小爬虫">
                         
-                        <span class="card-title">云边有个小卖部</span>
+                        <span class="card-title">图片小爬虫</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1310,30 +1545,35 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%84%9F%E6%82%9F/" class="post-category">
-                                    感悟
+                            <a href="/categories/%E7%88%AC%E8%99%AB/" class="post-category">
+                                    爬虫
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
-                        <span class="chip bg-color">记录</span>
+                    <a href="/tags/%E7%88%AC%E8%99%AB/">
+                        <span class="chip bg-color">爬虫</span>
                     </a>
                     
-                    <a href="/tags/%E6%84%9F%E6%82%9F/">
-                        <span class="chip bg-color">感悟</span>
+                    <a href="/tags/java/">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%B4%AA%E7%8E%A9/">
+                        <span class="chip bg-color">贪玩</span>
                     </a>
                     
                 </div>
@@ -1347,12 +1587,12 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/Tetris(Linux%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A11)/">
+                <a href="/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84--%E6%9F%A5%E6%89%BE/">
                     <div class="card-image">
                         
-                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/7.jpg" class="responsive-img" alt="Linux作业(俄罗斯方块Tetris)">
+                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/wallhaven-72pe8v_1920x1080.png" class="responsive-img" alt="数据结构之查找算法">
                         
-                        <span class="card-title">Linux作业(俄罗斯方块Tetris)</span>
+                        <span class="card-title">数据结构之查找算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1363,14 +1603,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/C%E8%AF%AD%E8%A8%80/" class="post-category">
-                                    C语言
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" class="post-category">
+                                    数据结构
                                 </a>
                             
                             
@@ -1380,16 +1620,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E4%BD%9C%E4%B8%9A/">
-                        <span class="chip bg-color">作业</span>
-                    </a>
-                    
-                    <a href="/tags/C%E8%AF%AD%E8%A8%80/">
-                        <span class="chip bg-color">C语言</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%AE%B0%E5%BD%95/">
-                        <span class="chip bg-color">记录</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%EF%BC%8C%E6%9F%A5%E6%89%BE%E7%AE%97%E6%B3%95%EF%BC%8C%E8%80%83%E7%A0%94/">
+                        <span class="chip bg-color">数据结构，查找算法，考研</span>
                     </a>
                     
                 </div>
