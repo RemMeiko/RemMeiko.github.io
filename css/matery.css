@@ -35,7 +35,7 @@
 
 body {
     /* background-color: #eaeaea; */
-    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url("https://remmeiko.gitee.io/img-bed/anime/6.png"), url("https://remmeiko.gitee.io/img-bed/anime/5.jpg") 0px 0px;
+    background: linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)) 0% 0% / cover, url("https://gitee.com/RemMeiko/img-bed/raw/master/anime/99.png"), url("https://gitee.com/RemMeiko/img-bed/raw/master/anime/100.png") 0px 0px;
     background-attachment: fixed;
     margin: 0;
     color: #7F95D1;
@@ -577,7 +577,7 @@ header .go-back i {
     display: block;
     left: 0;
     top: 0;
-    content: "";
+    content: ""; /* 注释掉即可取消轮播图背景的蒙版 */
 }
 
 .bg-cover .container {
