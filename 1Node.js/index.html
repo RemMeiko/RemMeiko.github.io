@@ -749,7 +749,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-04-12
+                    2024-12-05
                 </div>
                 
 
@@ -787,7 +787,7 @@
 <blockquote>
 <p>前言：因为搭建博客接触到node.js，所以对node.js进行简单的了解，扩充一下广度同时记录一些大佬的文章方便自己日后查询，记录如下：</p>
 </blockquote>
-<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="Node-js是什么"><a href="#Node-js是什么" class="headerlink" title="Node.js是什么"></a>Node.js是什么</h3><p>官方文档：<a target="_blank" rel="noopener" href="http://nodejs.cn/learn">http://nodejs.cn/learn</a><br>下面是官方文档首段的介绍　　　　　　　　　　　　　<br><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/9-%E5%AE%98%E7%BD%91%E4%BB%8B%E7%BB%8D.png"></p>
+<h2 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h2><h3 id="Node-js是什么"><a href="#Node-js是什么" class="headerlink" title="Node.js是什么"></a>Node.js是什么</h3><p>官方文档：<a target="_blank" rel="noopener" href="http://nodejs.cn/learn">http://nodejs.cn/learn</a><br>下面是官方文档首段的介绍　　　　　　　　　　　　　<br><img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/9-%E5%AE%98%E7%BD%91%E4%BB%8B%E7%BB%8D.png"></p>
 <ul>
 <li>Node.js是一个基于Chrome V8引擎的能够在服务器运行JavaScript的跨平台JavaScript运行环境(可以理解为服务端的的JavaScript的代码解析器)</li>
 <li>Node.js采用事件驱动，非阻塞I/O模型（对于这方面的理解，我只知道因为JS是单线程的，不像Java中有多线程）</li>
@@ -842,7 +842,7 @@ npm config ls -l
 <pre class=" language-JavaScript"><code class="language-JavaScript">npm init
 npm init -y
 </code></pre>
-<p>下面是加上-y后默认创建的package.json中的内容<br><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/10-%E9%BB%98%E8%AE%A4%E5%88%9B%E5%BB%BA%E7%9A%84packagejson%E6%96%87%E4%BB%B6.png" alt="默认内容"></p>
+<p>下面是加上-y后默认创建的package.json中的内容<br><img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/10-%E9%BB%98%E8%AE%A4%E5%88%9B%E5%BB%BA%E7%9A%84packagejson%E6%96%87%E4%BB%B6.png" alt="默认内容"></p>
 <blockquote>
 <p>安装第三方包（install）</p>
 <ul>
@@ -888,23 +888,23 @@ npm uninstall 包名 --save-dev
 <p>新版的node.js自带npm，安装时会同时安装npm</p>
 </blockquote>
 <h3 id="引导程序安装："><a href="#引导程序安装：" class="headerlink" title="引导程序安装："></a><strong>引导程序安装</strong>：</h3><ul>
-<li><p>第一步：在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载node的msi程序安装文件。<br><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/1-%E5%AE%98%E7%BD%91%E7%95%8C%E9%9D%A2.png" alt="官网界面"></p>
+<li><p>第一步：在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载node的msi程序安装文件。<br><img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/1-%E5%AE%98%E7%BD%91%E7%95%8C%E9%9D%A2.png" alt="官网界面"></p>
 </li>
-<li><p>第二步:双击进入安装过程,正常情况下下一步就行了<br>其中有两个过程需要注意<br>  第一：安装模块的选择<br>  <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/2-%E5%AE%89%E8%A3%85%E9%80%89%E6%8B%A9.png"><br>  Node.js runtime是Node.js的核心模块<br>  npm package manager是包管理工具<br>  Online documentation shortcut是相关介绍文档<br>  Add to PATH是将node和npm添加到环境变量<br>  <strong>默认就行</strong><br>  第二：<br>  <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/3-%E5%AE%89%E8%A3%85%E9%80%89%E6%8B%A9.png"><br>  勾选后会自动安装2个工具，Python 2和Visual Studio构建工具,这两个构建工具是因为一些npm模块需要使用C/C++编译，如果想要编译这些模块则需要安装，不安装的话后续碰到这些模块会出问题，建议直接勾选避免不必要的麻烦，虽然后续可以手动安装</p>
+<li><p>第二步:双击进入安装过程,正常情况下下一步就行了<br>其中有两个过程需要注意<br>  第一：安装模块的选择<br>  <img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/2-%E5%AE%89%E8%A3%85%E9%80%89%E6%8B%A9.png"><br>  Node.js runtime是Node.js的核心模块<br>  npm package manager是包管理工具<br>  Online documentation shortcut是相关介绍文档<br>  Add to PATH是将node和npm添加到环境变量<br>  <strong>默认就行</strong><br>  第二：<br>  <img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/3-%E5%AE%89%E8%A3%85%E9%80%89%E6%8B%A9.png"><br>  勾选后会自动安装2个工具，Python 2和Visual Studio构建工具,这两个构建工具是因为一些npm模块需要使用C/C++编译，如果想要编译这些模块则需要安装，不安装的话后续碰到这些模块会出问题，建议直接勾选避免不必要的麻烦，虽然后续可以手动安装</p>
 <blockquote>
 <p>关于这两个构建工具勾选后，Node.js安装完成后会跳出powershell窗口，光标一直会闪，不要关闭，会等一段时间才进行下载，如果安装失败就只能手动安装了。不过使用Node.js不是很多的话不安装也没什么大的影响。</p>
 </blockquote>
 </li>
-<li><p>第三步:如果安装时勾选了Add to PATH，环境就已经安装完毕了，打开cmd窗口输入”node -v”和”npm -v”命令进行检测，如下图所示就是已经安装成功了<br><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/4-%E6%B5%8B%E8%AF%95%E5%AE%89%E8%A3%85.png" alt="测试图片"></p>
+<li><p>第三步:如果安装时勾选了Add to PATH，环境就已经安装完毕了，打开cmd窗口输入”node -v”和”npm -v”命令进行检测，如下图所示就是已经安装成功了<br><img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/4-%E6%B5%8B%E8%AF%95%E5%AE%89%E8%A3%85.png" alt="测试图片"></p>
 <h3 id="压缩包安装"><a href="#压缩包安装" class="headerlink" title="压缩包安装"></a><strong>压缩包安装</strong></h3><blockquote>
 <p>通过下载压缩包进行安装（这是我最喜欢的方式）</p>
 </blockquote>
 </li>
-<li><p>第一步：还是在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">官网</a>下载压缩包<br><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/5-%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B8%8B%E8%BD%BD.png" alt="下载界面"></p>
+<li><p>第一步：还是在<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download/">官网</a>下载压缩包<br><img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/5-%E5%8E%8B%E7%BC%A9%E5%8C%85%E4%B8%8B%E8%BD%BD.png" alt="下载界面"></p>
 </li>
 <li><p>下载解压后和第一种方式安装的内容是一样的</p>
 </li>
-<li><p>第二步：配置环境变量<br>将解压的目录路径添加到用户变量的path中去<br>如图：<br><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/6-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE.png" alt="环境变量"><br>到这里基本工作已经做完，在cmd中输入”node -v”和”npm -v”此时应该是已经能够正常显示的</p>
+<li><p>第二步：配置环境变量<br>将解压的目录路径添加到用户变量的path中去<br>如图：<br><img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/6-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE.png" alt="环境变量"><br>到这里基本工作已经做完，在cmd中输入”node -v”和”npm -v”此时应该是已经能够正常显示的</p>
 </li>
 </ul>
 <h3 id="其他配置"><a href="#其他配置" class="headerlink" title="其他配置"></a><strong>其他配置</strong></h3><blockquote>
@@ -921,14 +921,14 @@ npm uninstall 包名 --save-dev
 <li>在安装的node文件下新建node_cache和node_global两个文件夹<br>然后在cmd中输入以下两行命令  <pre><code>npm config set prefix &quot;node_global路径&quot;  
 npm config set cache &quot;node_cache路径&quot;
 </code></pre>
-<img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/7-%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E6%9B%B4%E6%94%B9.png" alt="命令输入"></li>
+<img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/7-%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E8%B7%AF%E5%BE%84%E6%9B%B4%E6%94%B9.png" alt="命令输入"></li>
 </ul>
 </li>
 <li>配置安装模块的镜像源  <ul>
 <li>在cmd中使用命令 <pre><code>npm config set registry https://registry.npm.taobao.org --global
 </code></pre>
 </li>
-<li>进行验证,命令：npm config ls -l<br><img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/8--%E6%9B%B4%E6%8D%A2%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F.png" alt="更换配置"></li>
+<li>进行验证,命令：npm config ls -l<br><img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/boke-img/%E7%AC%AC%E4%B8%80%E7%AF%87(Node.js%E7%AE%80%E5%8D%95%E5%AD%A6%E4%B9%A0)/8--%E6%9B%B4%E6%8D%A2%E6%B7%98%E5%AE%9D%E9%95%9C%E5%83%8F.png" alt="更换配置"></li>
 </ul>
 </li>
 </ul>
@@ -1499,7 +1499,7 @@ npm config set cache &quot;node_cache路径&quot;
                 <a href="/Java%E5%9F%BA%E7%A1%80/">
                     <div class="card-image">
                         
-                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/5.png" class="responsive-img" alt="Java基础">
+                        <img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/anime/5.png" class="responsive-img" alt="Java基础">
                         
                         <span class="card-title">Java基础</span>
                     </div>
@@ -1551,7 +1551,7 @@ npm config set cache &quot;node_cache路径&quot;
                 <a href="/3%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
                     <div class="card-image">
                         
-                        <img src="./medias/rem.gif" data-original="https://remmeiko.gitee.io/img-bed/anime/3.png" class="responsive-img" alt="环境配置">
+                        <img src="./medias/rem.gif" data-original="https://552c721.webp.li/2024/gitee_bed_img/anime/3.png" class="responsive-img" alt="环境配置">
                         
                         <span class="card-title">环境配置</span>
                     </div>
